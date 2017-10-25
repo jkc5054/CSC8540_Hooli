@@ -21,7 +21,7 @@ public class BoardView extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public BoardView(MainPanel main) {
+	public BoardView(MainPanel main, ArrayList<ImageIcon> iconsToUse) {
 		setLayout(null);
 		
 		JTextArea textArea = new JTextArea();
@@ -46,9 +46,9 @@ public class BoardView extends JPanel {
 		ImageButton imageButton = new ImageButton();
 		imageButton.setBounds(310, 11, 80, 80);
 		add(imageButton);
+		buttons.add(imageButton);
 		
 		ImageButton imageButton_1 = new ImageButton();
-		imageButton_1.setIconProperty(new ImageIcon("C:\\github-repos\\Hooli\\src\\image1.jpg"));
 		imageButton_1.setBounds(400, 11, 80, 80);
 		add(imageButton_1);
 		buttons.add(imageButton_1);
@@ -233,7 +233,9 @@ public class BoardView extends JPanel {
 		add(imageButton_36);
 		buttons.add(imageButton_36);
 		
-		
+		for(int i = 0; i < buttons.size(); i++) {
+			buttons.get(i).setIconProperty(iconsToUse.get(i));
+		}
 
 	}
 	

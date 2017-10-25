@@ -8,12 +8,16 @@ public class MainPanel extends JPanel {
 	private CardLayout cardLayout = new CardLayout();
 	private SplashPanel splashPanel = new SplashPanel(this);
 	private GameModeView gameModeView = new GameModeView(this);
-	private BoardView boardView = new BoardView(this);
+	private BoardView boardView;
+	private HuskerDuController controller; 
 	
 	public MainPanel() {
 		setLayout(cardLayout);
 		add(splashPanel, SplashPanel.Key);
 		add(gameModeView, GameModeView.Key);
+		controller = new HuskerDuController();
+		controller.LoadImages();
+		boardView = new BoardView(this, controller.listOfIcons);
 		add(boardView, BoardView.Key);
 	}
 	
