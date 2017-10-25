@@ -26,7 +26,7 @@ public class GameModeView extends JPanel {
 		JButton btnSinglePlayer = new JButton("Single Player");
 		btnSinglePlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				main.SinglePlayer();
 			}
 		});
 		btnSinglePlayer.setFont(new Font("Tahoma", Font.PLAIN, 20));

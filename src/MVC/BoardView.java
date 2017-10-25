@@ -6,174 +6,23 @@ import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
 
 public class BoardView extends JPanel {
 
+	public static String Key = "BOARDVIEW";
+	
+	private ArrayList<ImageButton> buttons = new ArrayList<ImageButton>();
 	/**
 	 * Create the panel.
 	 */
-	public BoardView() {
+	public BoardView(MainPanel main) {
 		setLayout(null);
-		
-		JButton btnOne = new JButton("1");
-		btnOne.setBounds(414, 27, 80, 80);
-		add(btnOne);
-		
-		JButton btnTwo = new JButton("2");
-		btnTwo.setBounds(234, 27, 80, 80);
-		add(btnTwo);
-		
-		JButton button = new JButton("2");
-		button.setBounds(324, 27, 80, 80);
-		add(button);
-		
-		JButton button_1 = new JButton("2");
-		button_1.setBounds(504, 27, 80, 80);
-		add(button_1);
-		
-		JButton button_2 = new JButton("2");
-		button_2.setBounds(144, 108, 80, 80);
-		add(button_2);
-		
-		JButton button_3 = new JButton("2");
-		button_3.setBounds(234, 108, 80, 80);
-		add(button_3);
-		
-		JButton button_4 = new JButton("2");
-		button_4.setBounds(324, 108, 80, 80);
-		add(button_4);
-		
-		JButton button_5 = new JButton("2");
-		button_5.setBounds(414, 108, 80, 80);
-		add(button_5);
-		
-		JButton button_6 = new JButton("2");
-		button_6.setBounds(504, 108, 80, 80);
-		add(button_6);
-		
-		JButton button_7 = new JButton("2");
-		button_7.setBounds(594, 108, 80, 80);
-		add(button_7);
-		
-		JButton button_8 = new JButton("2");
-		button_8.setBounds(684, 108, 80, 80);
-		add(button_8);
-		
-		JButton button_9 = new JButton("2");
-		button_9.setBounds(54, 108, 80, 80);
-		add(button_9);
-		
-		JButton button_10 = new JButton("2");
-		button_10.setBounds(54, 199, 80, 80);
-		add(button_10);
-		
-		JButton button_11 = new JButton("2");
-		button_11.setBounds(144, 199, 80, 80);
-		add(button_11);
-		
-		JButton button_12 = new JButton("2");
-		button_12.setBounds(234, 199, 80, 80);
-		add(button_12);
-		
-		JButton button_13 = new JButton("2");
-		button_13.setBounds(324, 199, 80, 80);
-		add(button_13);
-		
-		JButton button_14 = new JButton("2");
-		button_14.setBounds(414, 199, 80, 80);
-		add(button_14);
-		
-		JButton button_15 = new JButton("2");
-		button_15.setBounds(504, 199, 80, 80);
-		add(button_15);
-		
-		JButton button_16 = new JButton("2");
-		button_16.setBounds(594, 199, 80, 80);
-		add(button_16);
-		
-		JButton button_17 = new JButton("2");
-		button_17.setBounds(684, 199, 80, 80);
-		add(button_17);
-		
-		JButton button_18 = new JButton("2");
-		button_18.setBounds(54, 290, 80, 80);
-		add(button_18);
-		
-		JButton button_19 = new JButton("2");
-		button_19.setBounds(144, 290, 80, 80);
-		add(button_19);
-		
-		JButton button_20 = new JButton("2");
-		button_20.setBounds(234, 290, 80, 80);
-		add(button_20);
-		
-		JButton button_21 = new JButton("2");
-		button_21.setBounds(324, 290, 80, 80);
-		add(button_21);
-		
-		JButton button_22 = new JButton("2");
-		button_22.setBounds(414, 290, 80, 80);
-		add(button_22);
-		
-		JButton button_23 = new JButton("2");
-		button_23.setBounds(504, 290, 80, 80);
-		add(button_23);
-		
-		JButton button_24 = new JButton("2");
-		button_24.setBounds(594, 290, 80, 80);
-		add(button_24);
-		
-		JButton button_25 = new JButton("2");
-		button_25.setBounds(684, 290, 80, 80);
-		add(button_25);
-		
-		JButton button_26 = new JButton("2");
-		button_26.setBounds(54, 381, 80, 80);
-		add(button_26);
-		
-		JButton button_27 = new JButton("2");
-		button_27.setBounds(144, 381, 80, 80);
-		add(button_27);
-		
-		JButton button_28 = new JButton("2");
-		button_28.setBounds(234, 381, 80, 80);
-		add(button_28);
-		
-		JButton button_29 = new JButton("2");
-		button_29.setBounds(324, 381, 80, 80);
-		add(button_29);
-		
-		JButton button_30 = new JButton("2");
-		button_30.setBounds(414, 381, 80, 80);
-		add(button_30);
-		
-		JButton button_31 = new JButton("2");
-		button_31.setBounds(504, 381, 80, 80);
-		add(button_31);
-		
-		JButton button_32 = new JButton("2");
-		button_32.setBounds(594, 381, 80, 80);
-		add(button_32);
-		
-		JButton button_33 = new JButton("2");
-		button_33.setBounds(684, 381, 80, 80);
-		add(button_33);
-		
-		JButton button_34 = new JButton("2");
-		button_34.setBounds(234, 468, 80, 80);
-		add(button_34);
-		
-		JButton button_35 = new JButton("2");
-		button_35.setBounds(324, 468, 80, 80);
-		add(button_35);
-		
-		JButton button_36 = new JButton("2");
-		button_36.setBounds(414, 468, 80, 80);
-		add(button_36);
-		
-		JButton button_37 = new JButton("2");
-		button_37.setBounds(504, 468, 80, 80);
-		add(button_37);
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setBounds(10, 582, 174, 155);
@@ -193,6 +42,199 @@ public class BoardView extends JPanel {
 		lblPlayerScore_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblPlayerScore_1.setBounds(737, 552, 124, 24);
 		add(lblPlayerScore_1);
+		
+		ImageButton imageButton = new ImageButton();
+		imageButton.setBounds(310, 11, 80, 80);
+		add(imageButton);
+		
+		ImageButton imageButton_1 = new ImageButton();
+		imageButton_1.setIconProperty(new ImageIcon("C:\\github-repos\\Hooli\\src\\image1.jpg"));
+		imageButton_1.setBounds(400, 11, 80, 80);
+		add(imageButton_1);
+		buttons.add(imageButton_1);
+		
+		ImageButton imageButton_2 = new ImageButton();
+		imageButton_2.setBounds(400, 458, 80, 80);
+		add(imageButton_2);
+		buttons.add(imageButton_2);
+		
+		ImageButton imageButton_3 = new ImageButton();
+		imageButton_3.setBounds(490, 458, 80, 80);
+		add(imageButton_3);
+		buttons.add(imageButton_3);
+		
+		ImageButton imageButton_4 = new ImageButton();
+		imageButton_4.setBounds(260, 94, 80, 80);
+		add(imageButton_4);
+		buttons.add(imageButton_4);
+		
+		ImageButton imageButton_5 = new ImageButton();
+		imageButton_5.setBounds(350, 94, 80, 80);
+		add(imageButton_5);
+		buttons.add(imageButton_5);
+		
+		ImageButton imageButton_6 = new ImageButton();
+		imageButton_6.setBounds(440, 94, 80, 80);
+		add(imageButton_6);
+		buttons.add(imageButton_6);
+		
+		ImageButton imageButton_7 = new ImageButton();
+		imageButton_7.setBounds(530, 94, 80, 80);
+		add(imageButton_7);
+		buttons.add(imageButton_7);
+		
+		ImageButton imageButton_8 = new ImageButton();
+		imageButton_8.setBounds(620, 94, 80, 80);
+		add(imageButton_8);
+		buttons.add(imageButton_8);
+		
+		ImageButton imageButton_9 = new ImageButton();
+		imageButton_9.setBounds(710, 94, 80, 80);
+		add(imageButton_9);
+		buttons.add(imageButton_9);
+		
+		ImageButton imageButton_10 = new ImageButton();
+		imageButton_10.setBounds(170, 94, 80, 80);
+		add(imageButton_10);
+		buttons.add(imageButton_10);
+		
+		ImageButton imageButton_11 = new ImageButton();
+		imageButton_11.setBounds(80, 94, 80, 80);
+		add(imageButton_11);
+		buttons.add(imageButton_11);
+		
+		ImageButton imageButton_12 = new ImageButton();
+		imageButton_12.setBounds(80, 185, 80, 80);
+		add(imageButton_12);
+		buttons.add(imageButton_12);
+		
+		ImageButton imageButton_13 = new ImageButton();
+		imageButton_13.setBounds(170, 185, 80, 80);
+		add(imageButton_13);
+		buttons.add(imageButton_13);
+		
+		ImageButton imageButton_14 = new ImageButton();
+		imageButton_14.setBounds(260, 185, 80, 80);
+		add(imageButton_14);
+		buttons.add(imageButton_14);
+		
+		ImageButton imageButton_15 = new ImageButton();
+		imageButton_15.setBounds(350, 185, 80, 80);
+		add(imageButton_15);
+		buttons.add(imageButton_15);
+		
+		ImageButton imageButton_16 = new ImageButton();
+		imageButton_16.setBounds(440, 185, 80, 80);
+		add(imageButton_16);
+		buttons.add(imageButton_16);
+		
+		ImageButton imageButton_17 = new ImageButton();
+		imageButton_17.setBounds(530, 185, 80, 80);
+		add(imageButton_17);
+		buttons.add(imageButton_17);
+		
+		ImageButton imageButton_18 = new ImageButton();
+		imageButton_18.setBounds(620, 185, 80, 80);
+		add(imageButton_18);
+		buttons.add(imageButton_18);
+		
+		ImageButton imageButton_19 = new ImageButton();
+		imageButton_19.setBounds(710, 185, 80, 80);
+		add(imageButton_19);
+		buttons.add(imageButton_19);
+		
+		ImageButton imageButton_20 = new ImageButton();
+		imageButton_20.setBounds(80, 276, 80, 80);
+		add(imageButton_20);
+		buttons.add(imageButton_20);
+		
+		ImageButton imageButton_21 = new ImageButton();
+		imageButton_21.setBounds(170, 276, 80, 80);
+		add(imageButton_21);
+		buttons.add(imageButton_21);
+		
+		ImageButton imageButton_22 = new ImageButton();
+		imageButton_22.setBounds(260, 276, 80, 80);
+		add(imageButton_22);
+		buttons.add(imageButton_22);
+		
+		ImageButton imageButton_23 = new ImageButton();
+		imageButton_23.setBounds(350, 276, 80, 80);
+		add(imageButton_23);
+		buttons.add(imageButton_23);
+		
+		ImageButton imageButton_24 = new ImageButton();
+		imageButton_24.setBounds(440, 276, 80, 80);
+		add(imageButton_24);
+		buttons.add(imageButton_24);
+		
+		ImageButton imageButton_25 = new ImageButton();
+		imageButton_25.setBounds(530, 276, 80, 80);
+		add(imageButton_25);
+		buttons.add(imageButton_25);
+		
+		ImageButton imageButton_26 = new ImageButton();
+		imageButton_26.setBounds(620, 276, 80, 80);
+		add(imageButton_26);
+		buttons.add(imageButton_26);
+		
+		ImageButton imageButton_27 = new ImageButton();
+		imageButton_27.setBounds(710, 276, 80, 80);
+		add(imageButton_27);
+		buttons.add(imageButton_27);
+		
+		ImageButton imageButton_28 = new ImageButton();
+		imageButton_28.setBounds(80, 367, 80, 80);
+		add(imageButton_28);
+		buttons.add(imageButton_28);
+		
+		ImageButton imageButton_29 = new ImageButton();
+		imageButton_29.setBounds(170, 367, 80, 80);
+		add(imageButton_29);
+		buttons.add(imageButton_29);
+		
+		ImageButton imageButton_30 = new ImageButton();
+		imageButton_30.setBounds(260, 367, 80, 80);
+		add(imageButton_30);
+		buttons.add(imageButton_30);
+		
+		ImageButton imageButton_31 = new ImageButton();
+		imageButton_31.setBounds(350, 367, 80, 80);
+		add(imageButton_31);
+		buttons.add(imageButton_31);
+		
+		ImageButton imageButton_32 = new ImageButton();
+		imageButton_32.setBounds(440, 367, 80, 80);
+		add(imageButton_32);
+		buttons.add(imageButton_32);
+		
+		ImageButton imageButton_33 = new ImageButton();
+		imageButton_33.setBounds(530, 367, 80, 80);
+		add(imageButton_33);
+		buttons.add(imageButton_33);
+		
+		ImageButton imageButton_34 = new ImageButton();
+		imageButton_34.setBounds(620, 367, 80, 80);
+		add(imageButton_34);
+		buttons.add(imageButton_34);
+		
+		ImageButton imageButton_35 = new ImageButton();
+		imageButton_35.setBounds(710, 367, 80, 80);
+		add(imageButton_35);
+		buttons.add(imageButton_35);
+		
+		ImageButton imageButton_38 = new ImageButton();
+		imageButton_38.setBounds(310, 458, 80, 80);
+		add(imageButton_38);
+		buttons.add(imageButton_38);
+		
+		ImageButton imageButton_36 = new ImageButton();
+		imageButton_36.setBounds(490, 11, 80, 80);
+		add(imageButton_36);
+		buttons.add(imageButton_36);
+		
+		
 
 	}
+	
 }

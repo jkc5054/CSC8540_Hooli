@@ -3,13 +3,17 @@ package display;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.Dialog;
 import java.awt.Dimension;
 
 public class MainWindow {
 
 	private JFrame frame;
+	
+	private SplashPanel splashPanel;
 
 	/**
 	 * Launch the application.
@@ -39,16 +43,22 @@ public class MainWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setSize(new Dimension(1250, 500));
-		frame.setSize(new Dimension(1250, 500));
-		frame.setBounds(0, 0, 1250, 500);
+		splashPanel = new SplashPanel();
+		//splashPanel.addproper
+		//frame.getContentPane().setSize(new Dimension(1250, 500));
+		//frame.setSize(new Dimension(1250, 500));
+		//frame.setBounds(0, 0, 1250, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JPanel mainPanel = new JPanel();
-		mainPanel.setSize(new Dimension(1250, 500));
-		frame.getContentPane().add(mainPanel, BorderLayout.CENTER);
+		//JPanel mainPanel = new JPanel();		
+		//mainPanel.setSize(new Dimension(1250, 500));
+		frame.getContentPane().add(splashPanel, BorderLayout.CENTER);
+		frame.setResizable(false);
+		frame.pack();
+		frame.setLocationRelativeTo(null);
 		
-		mainPanel.add(new SplashPanel());
+		//mainPanel.add(splashPanel);
+		frame.setVisible(true);
 	}
 
 }
