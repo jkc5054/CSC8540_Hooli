@@ -2,6 +2,7 @@ package MVC;
 
 import java.awt.EventQueue;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -16,10 +17,12 @@ public class HuskerDuView {
 	private SplashPanel splashPanel;
 	
 	private MainPanel mainPanel;
+	
+	private HuskerDuController controller;
 
 	/**
 	 * Launch the application.
-	 */
+	 *//*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,12 +35,18 @@ public class HuskerDuView {
 			}
 		});
 	}
-
+*/
 	/**
 	 * Create the application.
 	 */
-	public HuskerDuView() {
+	public HuskerDuView(HuskerDuController inController) {
+		controller = inController;
 		initialize();
+
+	}
+	
+	public void LoadImages(ImageIconContainer[] images, ImageIcon defaultIcon) {
+		mainPanel.LoadImages(images, defaultIcon);
 	}
 
 	/**
@@ -45,7 +54,7 @@ public class HuskerDuView {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		mainPanel = new MainPanel();
+		mainPanel = new MainPanel(controller);
 		//splashPanel = new SplashPanel();
 		
 		//splashPanel.addproper
