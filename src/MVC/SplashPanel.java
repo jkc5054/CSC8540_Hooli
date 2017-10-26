@@ -24,7 +24,8 @@ public class SplashPanel extends JPanel {
 		setLayout(null);
 		
 		JLabel lblSplashScreen = new JLabel("");
-		lblSplashScreen.setIcon(new ImageIcon("C:\\github-repos\\Hooli\\cfg\\SplashScreen.jpg"));
+		//lblSplashScreen.setIcon(new ImageIcon("C:\\github-repos\\Hooli\\cfg\\SplashScreen.jpg"));
+		lblSplashScreen.setIcon(new ImageIcon("C:\\github-repos\\CSC8540_Hooli\\cfg\\SplashScreen.jpg"));
 		lblSplashScreen.setBounds(0,5,1228,381);
 		add(lblSplashScreen);
 		

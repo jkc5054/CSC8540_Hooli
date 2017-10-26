@@ -65,17 +65,12 @@ public class HuskerDuController {
 			}
 			else
 			{
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				result.btn1.setToDefault();
-				result.btn2.setToDefault();
+				ResetIconRunnable runnable = new ResetIconRunnable(result.btn1, result.btn2);
+				(new Thread(runnable)).start();
 			}
 		}
 	}
+
 	
 	
 	/**
