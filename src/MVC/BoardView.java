@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 import java.awt.Dimension;
 
 public class BoardView extends JPanel {

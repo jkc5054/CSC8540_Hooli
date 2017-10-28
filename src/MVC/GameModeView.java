@@ -34,6 +34,11 @@ public class GameModeView extends JPanel {
 		add(btnSinglePlayer);
 		
 		JButton btnTwoPlayers = new JButton("Two Players");
+		btnTwoPlayers.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				main.SinglePlayer();
+			}
+		});
 		btnTwoPlayers.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnTwoPlayers.setBounds(247, 197, 193, 92);
 		add(btnTwoPlayers);

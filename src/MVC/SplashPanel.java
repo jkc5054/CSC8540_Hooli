@@ -25,7 +25,7 @@ public class SplashPanel extends JPanel {
 		
 		JLabel lblSplashScreen = new JLabel("");
 		lblSplashScreen.setIcon(new ImageIcon("C:\\github-repos\\CSC8540_Hooli\\cfg\\SplashScreen.jpg"));
-		lblSplashScreen.setBounds(0,5,1228,381);
+		lblSplashScreen.setBounds(70,5,1228,581);
 		add(lblSplashScreen);
 		
 		JButton btnStartGame = new JButton("Start Game");
@@ -35,7 +35,7 @@ public class SplashPanel extends JPanel {
 			}
 		});
 		btnStartGame.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnStartGame.setBounds(935, 397, 141, 56);
+		btnStartGame.setBounds(435, 497, 141, 56);
 		add(btnStartGame);
 		
 		JButton btnGameRules = new JButton("Game Rules");
@@ -46,7 +46,7 @@ public class SplashPanel extends JPanel {
 			}
 		});
 		btnGameRules.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnGameRules.setBounds(1088, 397, 141, 56);
+		btnGameRules.setBounds(688, 497, 141, 56);
 		add(btnGameRules);
 
 	}
