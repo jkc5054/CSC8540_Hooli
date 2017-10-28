@@ -61,15 +61,16 @@ public class HuskerDuView {
 		//frame.getContentPane().setSize(new Dimension(1250, 500));
 		//frame.setSize(new Dimension(1250, 500));
 		//frame.setBounds(0, 0, 1250, 500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		
 		//JPanel mainPanel = new JPanel();		
 		//mainPanel.setSize(new Dimension(1250, 500));
 		frame.getContentPane().add(mainPanel, BorderLayout.CENTER);
-		frame.setResizable(false);
+		frame.setResizable(true);
 		frame.pack();
-		frame.setLocationRelativeTo(null);
-		
+	//	frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(1400, 1000);
 		//mainPanel.add(splashPanel);
 		frame.setVisible(true);
 	}

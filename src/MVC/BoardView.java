@@ -12,6 +12,8 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Dimension;
 
 public class BoardView extends JPanel {
 
@@ -22,6 +24,7 @@ public class BoardView extends JPanel {
 	 * Create the panel.
 	 */
 	public BoardView(MainPanel main, ImageIconContainer[] iconsToUse, ImageIcon defaultIcon) {
+		setSize(new Dimension(12000, 900));
 		setLayout(null);
 		
 		JTextArea textArea = new JTextArea();

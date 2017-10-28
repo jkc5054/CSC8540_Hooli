@@ -1,7 +1,10 @@
 package MVC;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -37,17 +40,36 @@ public class RulesView extends JFrame {
 	public RulesView() {
 		setTitle("Rules");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 454, 340);
+		//setBounds(200, 200, 454, 340);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+				
 		
 		JTextArea txtRules = new JTextArea();
-		txtRules.setBounds(5, 5, 428, 285);
+		txtRules.setBounds(5, 5, 900, 600);
 		txtRules.setEditable(false);
-		txtRules.setText("These are the rules");
+		txtRules.setFont(new Font("Bell MT", Font.PLAIN, 20));
+		txtRules.setOpaque(false);
+		txtRules.setText("********** Husker Du Instructions *******" + "\n\n" + 
+		"* This is a memory match game" + "\n\n" +
+		"* The game board consists of tiles, all flipped down" + "\n" +
+		"* The player clicks on a tile to reveal it" + "\n" +
+		"* Then makes a guess click on another tile" + "\n" +
+		"* If the two tiles match, player gets 1 point" + "\n" +
+		"* If no match, the two tiles flip back and player clicks the next tile and so on" + "\n\n" +
+ 		"* One player" + "\n"	+  "	Player plays until all the matches are found" + "\n" +
+		"* Two players" + "\n" + "	Youngest player goes first" + "\n" + 
+		"	continues to find matches until a match is not found" + "\n" +
+		"	Player 2's turn to find matches until a match is not found" + "\n" +
+		"	When all the matches are found, the player with highest points is the winner"); 
+		
+		
 		contentPane.add(txtRules);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(900,600);
+		setVisible(true);
 		
 	}
 
