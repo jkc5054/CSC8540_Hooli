@@ -22,7 +22,7 @@ public class HuskerDuModel {
 	
 	public void LoadImages()
 	{
-		File folder = new File("C:\\github-repos\\CSC8540_Hooli\\cfg\\GameImages");
+		File folder = new File(HooliConstants.CFG_PATH + "GameImages");
 		ArrayList<File> listOfFiles = new ArrayList<File>(Arrays.asList(folder.listFiles()));
 		ArrayList<ImageIconContainer> listOfContainers = new ArrayList<ImageIconContainer>();
 		
@@ -45,7 +45,7 @@ public class HuskerDuModel {
 		arrayOfContainers = listOfContainers.toArray(new ImageIconContainer[listOfContainers.size()]);		
 		
 		try {
-			defaultIcon = new ImageIcon(ImageIO.read(new File("C:\\github-repos\\CSC8540_Hooli\\cfg\\DefaultIcon.png")));
+			defaultIcon = new ImageIcon(ImageIO.read(new File(HooliConstants.CFG_PATH + "DefaultIcon.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
