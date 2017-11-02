@@ -18,6 +18,8 @@ public class HuskerDuModel {
 	public ImageIcon defaultIcon;
 	
 	private ImageButton previousClick = null;
+	
+	
 
 	
 	public void LoadImages()
@@ -64,6 +66,7 @@ public class HuskerDuModel {
 			result.btn2 = button;
 			if(previousClick.indexInKey == button.indexInKey){
 				result.IsMatch = true;
+				
 			}
 			else
 			{
@@ -73,5 +76,10 @@ public class HuskerDuModel {
 		}
 		return result;
 	}
+	
+	
+	
+	
+	
 	
 }

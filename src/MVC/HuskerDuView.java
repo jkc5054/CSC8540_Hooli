@@ -42,11 +42,12 @@ public class HuskerDuView {
 	public HuskerDuView(HuskerDuController inController) {
 		controller = inController;
 		initialize();
-
+		
 	}
 	
 	public void LoadImages(ImageIconContainer[] images, ImageIcon defaultIcon) {
 		mainPanel.LoadImages(images, defaultIcon);
+		
 	}
 
 	/**

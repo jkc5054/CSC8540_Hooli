@@ -20,7 +20,7 @@ public class GameModeView extends JPanel {
 		JLabel lblChooseGameMode = new JLabel("Choose your game mode!");
 		lblChooseGameMode.setHorizontalAlignment(SwingConstants.CENTER);
 		lblChooseGameMode.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblChooseGameMode.setBounds(10, 5, 430, 110);
+		lblChooseGameMode.setBounds(460, 5, 430, 110);
 		add(lblChooseGameMode);
 		
 		JButton btnSinglePlayer = new JButton("Single Player");
@@ -30,7 +30,7 @@ public class GameModeView extends JPanel {
 			}
 		});
 		btnSinglePlayer.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnSinglePlayer.setBounds(10, 197, 193, 92);
+		btnSinglePlayer.setBounds(430, 197, 193, 92);
 		add(btnSinglePlayer);
 		
 		JButton btnTwoPlayers = new JButton("Two Players");
@@ -40,7 +40,7 @@ public class GameModeView extends JPanel {
 			}
 		});
 		btnTwoPlayers.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnTwoPlayers.setBounds(247, 197, 193, 92);
+		btnTwoPlayers.setBounds(747, 197, 193, 92);
 		add(btnTwoPlayers);
 
 	}
