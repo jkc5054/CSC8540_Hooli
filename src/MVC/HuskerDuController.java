@@ -42,9 +42,11 @@ public class HuskerDuController {
 	private HuskerDuModel model;
 	private HuskerDuView view;
 	public ImageIconContainer[] arrayOfContainers;
+		
 	
 	public HuskerDuController() {
 		model = new HuskerDuModel();
+		
 	}
 	
 	public void LoadImages() {
@@ -52,6 +54,7 @@ public class HuskerDuController {
 		arrayOfContainers = model.arrayOfContainers;
 		view = new HuskerDuView(this);
 		view.LoadImages(arrayOfContainers, model.defaultIcon);
+		
 	}
 	
 	public void SelectImage(ImageButton inButton) {
@@ -62,6 +65,8 @@ public class HuskerDuController {
 			if(result.IsMatch) {
 				result.btn1.setEnabled(false);
 				result.btn2.setEnabled(false);
+				
+				
 			}
 			else
 			{

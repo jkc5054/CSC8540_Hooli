@@ -18,6 +18,7 @@ import java.awt.Dimension;
 public class BoardView extends JPanel {
 
 	public static String Key = "BOARDVIEW";
+	Player player1, player2;
 	
 	private ArrayList<ImageButton> buttons = new ArrayList<ImageButton>();
 	/**
@@ -27,21 +28,28 @@ public class BoardView extends JPanel {
 		setSize(new Dimension(12000, 900));
 		setLayout(null);
 		
+		player1 = new Player("Sam");
+		player2 = new Player("Lia");
+		
 		JTextArea textArea = new JTextArea();
-		textArea.setBounds(10, 582, 174, 155);
+		textArea.setBounds(10, 582, 174, 100);
+		textArea.setFont(new Font("Tahoma", Font.BOLD,60));
+		textArea.setText(String.valueOf(player1.resetScore()));
 		add(textArea);
 		
 		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setBounds(687, 582, 174, 155);
+		textArea_1.setBounds(687, 582, 174, 100);
+		textArea_1.setFont(new Font("Tahoma", Font.BOLD,60));
+		textArea_1.setText(String.valueOf(player2.resetScore()));
 		add(textArea_1);
 		
-		JLabel lblPlayerScore = new JLabel("Player 1 Score");
-		lblPlayerScore.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel lblPlayerScore = new JLabel(player1.getName());
+		lblPlayerScore.setFont(new Font("Tahoma", Font.BOLD, 30));
 		lblPlayerScore.setBounds(10, 547, 124, 24);
 		add(lblPlayerScore);
 		
-		JLabel lblPlayerScore_1 = new JLabel("Player 2 Score");
-		lblPlayerScore_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JLabel lblPlayerScore_1 = new JLabel(player2.getName());
+		lblPlayerScore_1.setFont(new Font("Tahoma", Font.BOLD, 30));
 		lblPlayerScore_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblPlayerScore_1.setBounds(737, 552, 124, 24);
 		add(lblPlayerScore_1);
