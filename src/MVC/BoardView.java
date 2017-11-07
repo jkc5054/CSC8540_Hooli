@@ -1,18 +1,13 @@
 package MVC;
 
 import javax.swing.JPanel;
-import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
 import java.awt.Dimension;
 
 public class BoardView extends JPanel {
