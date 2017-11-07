@@ -42,7 +42,17 @@ public class GameModeView extends JPanel {
 		btnTwoPlayers.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnTwoPlayers.setBounds(747, 197, 193, 92);
 		add(btnTwoPlayers);
-
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				main.GoBack();
+			}
+		});
+		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnBack.setBounds(597, 397, 193, 92);
+		add(btnBack);
+		
 	}
 
 }

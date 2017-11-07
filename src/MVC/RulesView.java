@@ -13,8 +13,9 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import MVC.MainPanel;
 
-public class RulesView extends JFrame {
+public class RulesView extends JFrame implements Jpanel {
 
 	private JPanel contentPane;
 
@@ -30,6 +31,8 @@ public class RulesView extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				Jpanel obj = new RulesView();
+				
 			}
 		});
 	}
@@ -45,7 +48,6 @@ public class RulesView extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-				
 		
 		JTextArea txtRules = new JTextArea();
 		txtRules.setBounds(5, 5, 900, 600);
@@ -72,5 +74,20 @@ public class RulesView extends JFrame {
 		setVisible(true);
 		
 	}
+	
+	
+	public void GameModeView(MainPanel main) {
+			setLayout(null);
+			JButton btnBack = new JButton("Back");
+			btnBack.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					main.GoBack();
+				}
+			});
+			btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
+			btnBack.setBounds(597, 397, 193, 92);
+			add(btnBack);
+		}
+	
 
 }

@@ -19,9 +19,7 @@ public class HuskerDuModel {
 	
 	private ImageButton previousClick = null;
 	
-	
-
-	
+		
 	public void LoadImages()
 	{
 		File folder = new File(HooliConstants.CFG_PATH + "GameImages");

@@ -45,4 +45,8 @@ public class MainPanel extends JPanel {
 		controller.SelectImage(button);
 	}
 	
+	public void GoBack(){
+		cardLayout.show(this, SplashPanel.Key);
+	}
+	
 }

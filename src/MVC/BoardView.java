@@ -248,6 +248,17 @@ public class BoardView extends JPanel {
 			buttons.get(i).setIconProperty(iconsToUse[i].icon);
 			buttons.get(i).indexInKey = iconsToUse[i].key;
 		}
+		
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				main.StartGame();
+			}
+		});
+		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnBack.setBounds(347, 597, 193, 92);
+		add(btnBack);
 
 	}
 	
