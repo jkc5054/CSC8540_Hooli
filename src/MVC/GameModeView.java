@@ -19,7 +19,7 @@ public class GameModeView extends JPanel {
 		
 		JLabel lblChooseGameMode = new JLabel("Choose your game mode!");
 		lblChooseGameMode.setHorizontalAlignment(SwingConstants.CENTER);
-		lblChooseGameMode.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblChooseGameMode.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblChooseGameMode.setBounds(460, 5, 430, 110);
 		add(lblChooseGameMode);
 		
@@ -39,18 +39,52 @@ public class GameModeView extends JPanel {
 				main.SinglePlayer();
 			}
 		});
-		btnTwoPlayers.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnTwoPlayers.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		btnTwoPlayers.setBounds(747, 197, 193, 92);
 		add(btnTwoPlayers);
 		
+		//pri
+		
+		//Choose game level
+		
+				JLabel lblChooseGameLevel = new JLabel("Choose your game level!");
+				lblChooseGameLevel.setHorizontalAlignment(SwingConstants.CENTER);
+				lblChooseGameLevel.setFont(new Font("Tahoma", Font.BOLD, 25));
+				lblChooseGameLevel.setBounds(460, 300, 430, 110);
+				add(lblChooseGameLevel);
+
+				JButton btnLevelEasy = new JButton("Easy");
+				btnLevelEasy.setFont(new Font("Tahoma", Font.PLAIN, 25));
+				btnLevelEasy.setBounds(430, 450, 193, 92);
+				btnLevelEasy.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						// add action here
+					}
+				});	
+				
+				
+				JButton btnLevelHard = new JButton("Hard");
+				btnLevelHard.setFont(new Font("Tahoma", Font.PLAIN, 25));
+				btnLevelHard.setBounds(750, 450, 193, 92);
+				btnLevelHard.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//add action here
+					}
+				});
+				
+			add(btnLevelEasy);
+			add(btnLevelHard);		
+		
+		
 		JButton btnBack = new JButton("Back");
+		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnBack.setBounds(1100, 597, 100, 52);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				main.GoBack();
 			}
 		});
-		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnBack.setBounds(597, 397, 193, 92);
+		
 		add(btnBack);
 		
 	}
