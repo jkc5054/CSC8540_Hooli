@@ -5,7 +5,11 @@ import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 import java.util.ArrayList;
 import java.awt.Dimension;
@@ -14,7 +18,7 @@ public class BoardView extends JPanel {
 
 	public static String Key = "BOARDVIEW";
 	Player player1, player2;
-	
+		
 	private ArrayList<ImageButton> buttons = new ArrayList<ImageButton>();
 	/**
 	 * Create the panel.
@@ -37,6 +41,18 @@ public class BoardView extends JPanel {
 		textArea_1.setFont(new Font("Tahoma", Font.BOLD,60));
 		textArea_1.setText(String.valueOf(player2.resetScore()));
 		add(textArea_1);
+		
+		JLabel gameLevel = new JLabel("Level : ");
+		gameLevel.setFont(new Font("Tahoma", Font.BOLD, 30));
+		gameLevel.setBounds(937, 50, 124, 30);
+		add(gameLevel);
+		
+		JTextArea level = new JTextArea();
+		level.setBounds(1050, 50, 124, 40);
+		level.setEditable(false);
+		level.setFont(new Font("Tahoma", Font.BOLD,30));
+		//level.setText(gameMode.level);  
+		add(level);
 		
 		JLabel lblPlayerScore = new JLabel(player1.getName());
 		lblPlayerScore.setFont(new Font("Tahoma", Font.BOLD, 30));
