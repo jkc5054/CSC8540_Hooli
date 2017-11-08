@@ -2,8 +2,12 @@ package MVC;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -11,6 +15,7 @@ import java.awt.event.ActionEvent;
 public class GameModeView extends JPanel {
 
 	public static String Key = "GAMEMODE";
+	
 	/**
 	 * Create the panel.
 	 */
@@ -29,8 +34,8 @@ public class GameModeView extends JPanel {
 				main.SinglePlayer();
 			}
 		});
-		btnSinglePlayer.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnSinglePlayer.setBounds(430, 197, 193, 92);
+		btnSinglePlayer.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		btnSinglePlayer.setBounds(430, 150, 193, 92);
 		add(btnSinglePlayer);
 		
 		JButton btnTwoPlayers = new JButton("Two Players");
@@ -87,6 +92,7 @@ public class GameModeView extends JPanel {
 		
 		add(btnBack);
 		
+
 	}
 
 }
