@@ -45,7 +45,7 @@ public class GameModeView extends JPanel {
 			}
 		});
 		btnTwoPlayers.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		btnTwoPlayers.setBounds(747, 197, 193, 92);
+		btnTwoPlayers.setBounds(747, 150, 193, 92);
 		add(btnTwoPlayers);
 		
 		//pri
