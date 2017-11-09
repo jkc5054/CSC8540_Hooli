@@ -18,8 +18,8 @@ public class HuskerDuController {
 	private HuskerDuModel model;
 	private HuskerDuView view;
 	public ImageIconContainer[] arrayOfContainers;
-	private AbstractPlayer Player1;
-	private AbstractPlayer Player2;
+	public AbstractPlayer Player1;
+	public AbstractPlayer Player2;
 		
 	
 	public HuskerDuController() {
@@ -36,6 +36,7 @@ public class HuskerDuController {
 	public void SetPlayers(AbstractPlayer inPlayer1, AbstractPlayer inPlayer2){
 		Player1 = inPlayer1;
 		Player2 = inPlayer2;
+		model.SetPlayers(inPlayer1, inPlayer2);
 	}
 	
 	public void SelectImage(ImageButton inButton) {
@@ -48,7 +49,7 @@ public class HuskerDuController {
 				result.btn2.setEnabled(false);
 				model.IncrementScoreForCurrentPlayer();
 				model.CurrentPlayer.getScore();
-				
+				view.UpdateScores();
 			}
 			else
 			{
@@ -56,6 +57,8 @@ public class HuskerDuController {
 				(new Thread(runnable)).start();
 			}
 			model.SwitchPlayer();
+			
+			model.CurrentPlayer.SelectImages();
 		}
 	}
 

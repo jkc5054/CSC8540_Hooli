@@ -20,7 +20,7 @@ public class MainPanel extends JPanel {
 	}
 	
 	public void LoadImages(ImageIconContainer[] inIcons, ImageIcon defaultIcon){
-		boardView = new BoardView(this, inIcons, defaultIcon, );
+		boardView = new BoardView(this, inIcons, defaultIcon);
 		add(boardView, BoardView.Key);
 	}
 	
@@ -42,6 +42,15 @@ public class MainPanel extends JPanel {
 	
 	public void GoBack(){
 		cardLayout.show(this, SplashPanel.Key);
+	}
+	
+	public void SetPlayers(AbstractPlayer player1, AbstractPlayer player2) {
+		controller.SetPlayers(player1, player2);
+		boardView.SetPlayers(player1, player2);
+	}
+	
+	public void UpdateScores() {
+		boardView.UpdateScores();
 	}
 	
 }

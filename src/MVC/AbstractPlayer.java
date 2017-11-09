@@ -30,6 +30,9 @@ public abstract class AbstractPlayer {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public abstract void AddSeenImage(ImageButton inImage);
+	public abstract void SelectImages();
 
 	
 }

@@ -33,6 +33,10 @@ public class HuskerDuView {
 		mainPanel.LoadImages(images, defaultIcon);
 		
 	}
+	
+	public void UpdateScores() {
+		mainPanel.UpdateScores();
+	}
 
 	/**
 	 * Initialize the contents of the frame.

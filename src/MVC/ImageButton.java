@@ -26,10 +26,7 @@ public class ImageButton extends JButton {
 		main = inMain;
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(icon != null && getIcon() == defaultIcon) {
-					setIcon(icon);
-					main.SelectImage((ImageButton)arg0.getSource());
-				}
+				Select();
 			}
 		});
 	}
@@ -40,5 +37,12 @@ public class ImageButton extends JButton {
 	
 	public void setToDefault() {
 		setIcon(defaultIcon);
+	}
+	
+	public void Select() {
+		if(icon != null && getIcon() == defaultIcon) {
+			setIcon(icon);
+			main.SelectImage(this);
+		}
 	}
 }
