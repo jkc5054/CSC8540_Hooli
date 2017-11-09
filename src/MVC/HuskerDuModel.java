@@ -19,8 +19,9 @@ public class HuskerDuModel {
 	
 	private ImageButton previousClick = null;
 	
-	
-
+	AbstractPlayer Player1;
+	AbstractPlayer Player2;
+	AbstractPlayer CurrentPlayer;
 	
 	public void LoadImages()
 	{
@@ -51,6 +52,26 @@ public class HuskerDuModel {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void SetPlayers(AbstractPlayer inPlayer1, AbstractPlayer inPlayer2)
+	{
+		Player1 = inPlayer1;
+		Player2 = inPlayer2;
+		CurrentPlayer = Player1;
+	}
+	
+	public void SwitchPlayer(){
+		if(CurrentPlayer == Player1){
+			CurrentPlayer = Player2;
+		}
+		else{
+			CurrentPlayer = Player1;
+		}
+	}
+	
+	public void IncrementScoreForCurrentPlayer(){
+		CurrentPlayer.scoreUp();
 	}
 	
 	public ClickResult SelectButton(ImageButton button) {

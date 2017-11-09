@@ -18,18 +18,22 @@ import java.awt.Dimension;
 public class BoardView extends JPanel {
 
 	public static String Key = "BOARDVIEW";
-	Player player1, player2;
+	AbstractPlayer player1, player2;
 	
 	private ArrayList<ImageButton> buttons = new ArrayList<ImageButton>();
 	/**
 	 * Create the panel.
 	 */
-	public BoardView(MainPanel main, ImageIconContainer[] iconsToUse, ImageIcon defaultIcon) {
+	public BoardView(MainPanel main, ImageIconContainer[] iconsToUse, ImageIcon defaultIcon, AbstractPlayer inPlayer1,
+					 AbstractPlayer inPlayer2) {
 		setSize(new Dimension(12000, 900));
 		setLayout(null);
 		
-		player1 = new Player("Sam");
-		player2 = new Player("Lia");
+		//player1 = new HumanPlayer("Sam");
+		//player2 = new HumanPlayer("Lia");
+		
+		player1 = inPlayer1;
+		player2 = inPlayer2;
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setBounds(10, 582, 174, 100);
