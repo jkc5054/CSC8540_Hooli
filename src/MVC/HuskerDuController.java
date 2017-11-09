@@ -58,7 +58,7 @@ public class HuskerDuController {
 			}
 			model.SwitchPlayer();
 			
-			model.CurrentPlayer.SelectImages();
+			//model.CurrentPlayer.SelectImages();
 		}
 	}
 
