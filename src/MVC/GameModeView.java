@@ -33,6 +33,9 @@ public class GameModeView extends JPanel {
 		JButton btnSinglePlayer = new JButton("Single Player");
 		btnSinglePlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				AbstractPlayer player1 = new HumanPlayer("Player 1");
+				AbstractPlayer player2 = new ComputerPlayer("Computer");
+				main.SetPlayers(player1, player2);
 				main.SinglePlayer();
 			}
 		});

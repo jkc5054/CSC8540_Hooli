@@ -18,11 +18,12 @@ public class HuskerDuController {
 	private HuskerDuModel model;
 	private HuskerDuView view;
 	public ImageIconContainer[] arrayOfContainers;
+	public AbstractPlayer Player1;
+	public AbstractPlayer Player2;
 		
 	
 	public HuskerDuController() {
 		model = new HuskerDuModel();
-		
 	}
 	
 	public void LoadImages() {
@@ -30,7 +31,12 @@ public class HuskerDuController {
 		arrayOfContainers = model.arrayOfContainers;
 		view = new HuskerDuView(this);
 		view.LoadImages(arrayOfContainers, model.defaultIcon);
-		
+	}
+	
+	public void SetPlayers(AbstractPlayer inPlayer1, AbstractPlayer inPlayer2){
+		Player1 = inPlayer1;
+		Player2 = inPlayer2;
+		model.SetPlayers(inPlayer1, inPlayer2);
 	}
 	
 	public void SelectImage(ImageButton inButton) {
@@ -41,14 +47,18 @@ public class HuskerDuController {
 			if(result.IsMatch) {
 				result.btn1.setEnabled(false);
 				result.btn2.setEnabled(false);
-				
-				
+				model.IncrementScoreForCurrentPlayer();
+				model.CurrentPlayer.getScore();
+				view.UpdateScores();
 			}
 			else
 			{
 				ResetIconRunnable runnable = new ResetIconRunnable(result.btn1, result.btn2);
 				(new Thread(runnable)).start();
 			}
+			model.SwitchPlayer();
+			
+			model.CurrentPlayer.SelectImages();
 		}
 	}
 

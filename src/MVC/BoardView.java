@@ -5,6 +5,7 @@ import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,9 +17,18 @@ import java.awt.Dimension;
 
 public class BoardView extends JPanel {
 
+	private static final long serialVersionUID = 1L;
+
 	public static String Key = "BOARDVIEW";
-	Player player1, player2;
-		
+
+	AbstractPlayer player1, player2;
+	
+	JTextArea textArea;
+	JTextArea textArea_1;
+	
+	JLabel lblPlayerScore;
+	JLabel lblPlayerScore_1;
+
 	private ArrayList<ImageButton> buttons = new ArrayList<ImageButton>();
 	/**
 	 * Create the panel.
@@ -27,19 +37,22 @@ public class BoardView extends JPanel {
 		setSize(new Dimension(12000, 900));
 		setLayout(null);
 		
-		player1 = new Player("Sam");
-		player2 = new Player("Lia");
+		//player1 = new HumanPlayer("Sam");
+		//player2 = new HumanPlayer("Lia");
 		
-		JTextArea textArea = new JTextArea();
+		//player1 = inPlayer1;
+		//player2 = inPlayer2;
+		
+		textArea = new JTextArea();
 		textArea.setBounds(10, 582, 174, 100);
 		textArea.setFont(new Font("Tahoma", Font.BOLD,60));
-		textArea.setText(String.valueOf(player1.resetScore()));
+		textArea.setText("0");
 		add(textArea);
 		
-		JTextArea textArea_1 = new JTextArea();
+		textArea_1 = new JTextArea();
 		textArea_1.setBounds(687, 582, 174, 100);
 		textArea_1.setFont(new Font("Tahoma", Font.BOLD,60));
-		textArea_1.setText(String.valueOf(player2.resetScore()));
+		textArea_1.setText("0");
 		add(textArea_1);
 		
 		JLabel gameLevel = new JLabel("Level : ");
@@ -54,15 +67,15 @@ public class BoardView extends JPanel {
 		//level.setText(gameMode.level);  
 		add(level);
 		
-		JLabel lblPlayerScore = new JLabel(player1.getName());
+		lblPlayerScore = new JLabel();
 		lblPlayerScore.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblPlayerScore.setBounds(10, 547, 124, 24);
+		lblPlayerScore.setBounds(10, 547, 298, 24);
 		add(lblPlayerScore);
 		
-		JLabel lblPlayerScore_1 = new JLabel(player2.getName());
+		lblPlayerScore_1 = new JLabel();
 		lblPlayerScore_1.setFont(new Font("Tahoma", Font.BOLD, 30));
 		lblPlayerScore_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblPlayerScore_1.setBounds(737, 552, 124, 24);
+		lblPlayerScore_1.setBounds(572, 552, 289, 24);
 		add(lblPlayerScore_1);
 		
 		ImageButton imageButton = new ImageButton(defaultIcon, main);
@@ -271,6 +284,19 @@ public class BoardView extends JPanel {
 		btnBack.setBounds(347, 597, 193, 92);
 		add(btnBack);
 
+	}
+	
+	public void SetPlayers(AbstractPlayer inPlayer1, AbstractPlayer inPlayer2) {
+		player1 = inPlayer1;
+		player2 = inPlayer2;
+		
+		lblPlayerScore.setText(player1.getName());
+		lblPlayerScore_1.setText(player2.getName());
+	}
+	
+	public void UpdateScores(){
+		textArea.setText(""+player1.getScore());
+		textArea_1.setText(""+player2.getScore());
 	}
 	
 }

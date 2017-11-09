@@ -7,6 +7,11 @@ import java.awt.event.ActionEvent;
 
 public class ImageButton extends JButton {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	Icon icon = null;
 	
 	Icon defaultIcon = null;
@@ -21,10 +26,7 @@ public class ImageButton extends JButton {
 		main = inMain;
 		addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(icon != null) {
-					setIcon(icon);
-					main.SelectImage((ImageButton)arg0.getSource());
-				}
+				Select();
 			}
 		});
 	}
@@ -37,4 +39,10 @@ public class ImageButton extends JButton {
 		setIcon(defaultIcon);
 	}
 	
+	public void Select() {
+		if(icon != null && getIcon() == defaultIcon) {
+			setIcon(icon);
+			main.SelectImage(this);
+		}
+	}
 }
