@@ -268,6 +268,48 @@ public class BoardView extends JPanel {
 		add(imageButton_36);
 		buttons.add(imageButton_36);
 		
+		/*adding more images*/
+		ImageButton imageButton_39 = new ImageButton(defaultIcon, main);
+		imageButton_39.setBounds(130, 11, 80, 80);
+		add(imageButton_39);
+		buttons.add(imageButton_39);
+		
+		ImageButton imageButton_40 = new ImageButton(defaultIcon, main);
+		imageButton_40.setBounds(220, 11, 80, 80);
+		add(imageButton_40);
+		buttons.add(imageButton_40);
+		
+		ImageButton imageButton_41 = new ImageButton(defaultIcon, main);
+		imageButton_41.setBounds(580, 11, 80, 80);
+		add(imageButton_41);
+		buttons.add(imageButton_41);
+		
+		ImageButton imageButton_42 = new ImageButton(defaultIcon, main);
+		imageButton_42.setBounds(670, 11, 80, 80);
+		add(imageButton_42);
+		buttons.add(imageButton_42);
+		
+		ImageButton imageButton_43 = new ImageButton(defaultIcon, main);
+		imageButton_43.setBounds(130, 458, 80, 80);
+		add(imageButton_43);
+		buttons.add(imageButton_43);
+		
+		ImageButton imageButton_44 = new ImageButton(defaultIcon, main);
+		imageButton_44.setBounds(220, 458, 80, 80);
+		add(imageButton_44);
+		buttons.add(imageButton_44);
+		
+		ImageButton imageButton_45 = new ImageButton(defaultIcon, main);
+		imageButton_45.setBounds(580, 458, 80, 80);
+		add(imageButton_45);
+		buttons.add(imageButton_45);
+		
+		ImageButton imageButton_46 = new ImageButton(defaultIcon, main);
+		imageButton_46.setBounds(670, 458, 80, 80);
+		add(imageButton_46);
+		buttons.add(imageButton_46);
+		
+		
 		for(int i = 0; i < buttons.size(); i++) {
 			buttons.get(i).setIconProperty(iconsToUse[i].icon);
 			buttons.get(i).indexInKey = iconsToUse[i].key;

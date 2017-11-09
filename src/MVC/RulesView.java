@@ -69,7 +69,6 @@ public class RulesView extends JFrame implements Jpanel {
 		
 		
 		contentPane.add(txtRules);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(900,600);
 		setVisible(true);
 		
