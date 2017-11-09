@@ -17,15 +17,10 @@ public class MainPanel extends JPanel {
 		add(splashPanel, SplashPanel.Key);
 		add(gameModeView, GameModeView.Key);
 		controller = inController;
-		//controller = new HuskerDuController();
-		//controller = inController;
-		//controller.LoadImages();
-		//boardView = new BoardView(this, inIcons);
-		//add(boardView, BoardView.Key);
 	}
 	
 	public void LoadImages(ImageIconContainer[] inIcons, ImageIcon defaultIcon){
-		boardView = new BoardView(this, inIcons, defaultIcon);
+		boardView = new BoardView(this, inIcons, defaultIcon, );
 		add(boardView, BoardView.Key);
 	}
 	
