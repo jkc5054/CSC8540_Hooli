@@ -1,11 +1,11 @@
 package MVC;
 
-public class Player {
+public abstract class AbstractPlayer {
 	
 	private int score;
 	private String name;
 	
-	public Player(String name){
+	public AbstractPlayer(String name){
 		this.setName(name);
 		score=0;
 	}
@@ -30,6 +30,9 @@ public class Player {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public abstract void AddSeenImage(ImageButton inImage);
+	public abstract void SelectImages();
 
 	
 }

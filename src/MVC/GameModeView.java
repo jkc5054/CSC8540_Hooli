@@ -16,6 +16,8 @@ public class GameModeView extends JPanel {
 
 	public static String Key = "GAMEMODE";
 	
+	public String level = ""; //pri
+	
 	/**
 	 * Create the panel.
 	 */
@@ -31,6 +33,9 @@ public class GameModeView extends JPanel {
 		JButton btnSinglePlayer = new JButton("Single Player");
 		btnSinglePlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				AbstractPlayer player1 = new HumanPlayer("Player 1");
+				AbstractPlayer player2 = new ComputerPlayer("Computer");
+				main.SetPlayers(player1, player2);
 				main.SinglePlayer();
 			}
 		});
@@ -63,7 +68,9 @@ public class GameModeView extends JPanel {
 				btnLevelEasy.setBounds(430, 450, 193, 92);
 				btnLevelEasy.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						// add action here
+						level = "Easy";//pri
+						System.out.println("set level");
+						
 					}
 				});	
 				
@@ -73,7 +80,7 @@ public class GameModeView extends JPanel {
 				btnLevelHard.setBounds(750, 450, 193, 92);
 				btnLevelHard.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						//add action here
+						level = "Hard"; //pri
 					}
 				});
 				
