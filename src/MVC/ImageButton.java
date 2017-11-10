@@ -42,7 +42,9 @@ public class ImageButton extends JButton {
 	public void Select() {
 		if(icon != null && getIcon() == defaultIcon) {
 			setIcon(icon);
-			main.SelectImage(this);
+			synchronized(this){
+				main.SelectImage(this);
+			}
 		}
 	}
 }

@@ -37,6 +37,10 @@ public class HuskerDuView {
 	public void UpdateScores() {
 		mainPanel.UpdateScores();
 	}
+	
+	public void SelectRandomImages(){
+		mainPanel.SelectRandomImages();
+	}
 
 	/**
 	 * Initialize the contents of the frame.

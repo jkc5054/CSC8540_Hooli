@@ -13,5 +13,13 @@ public class HumanPlayer extends AbstractPlayer {
 	public void SelectImages() {
 		
 	}
+	
+	public boolean CanSelectImages(){
+		return false;
+	}
+	
+	public boolean SelectsRandomImages(){
+		return false;
+	}
 
 }

@@ -58,7 +58,15 @@ public class HuskerDuController {
 			}
 			model.SwitchPlayer();
 			
-			//model.CurrentPlayer.SelectImages();
+			if(model.CurrentPlayer.CanSelectImages())
+			{
+				model.CurrentPlayer.SelectImages();
+			}
+			else if(model.CurrentPlayer.SelectsRandomImages())
+			{
+				// Select 2 Random Images
+				view.SelectRandomImages();
+			}
 		}
 	}
 

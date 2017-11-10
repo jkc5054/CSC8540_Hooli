@@ -53,4 +53,8 @@ public class MainPanel extends JPanel {
 		boardView.UpdateScores();
 	}
 	
+	public void SelectRandomImages(){
+		boardView.SelectRandomImages();
+	}
+	
 }

@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.awt.Dimension;
 
 public class BoardView extends JPanel {
@@ -36,13 +37,7 @@ public class BoardView extends JPanel {
 	public BoardView(MainPanel main, ImageIconContainer[] iconsToUse, ImageIcon defaultIcon) {
 		setSize(new Dimension(12000, 900));
 		setLayout(null);
-		
-		//player1 = new HumanPlayer("Sam");
-		//player2 = new HumanPlayer("Lia");
-		
-		//player1 = inPlayer1;
-		//player2 = inPlayer2;
-		
+
 		textArea = new JTextArea();
 		textArea.setBounds(10, 582, 174, 100);
 		textArea.setFont(new Font("Tahoma", Font.BOLD,60));
@@ -339,6 +334,31 @@ public class BoardView extends JPanel {
 	public void UpdateScores(){
 		textArea.setText(""+player1.getScore());
 		textArea_1.setText(""+player2.getScore());
+	}
+	
+	public void SelectRandomImages(){
+		Random r = new Random();
+		boolean firstButtonFound = false;
+		boolean secondButtonFound = false;
+		
+		int idx1 = 0, idx2 = 0;
+		while(!firstButtonFound){
+			idx1 = r.nextInt(buttons.size()-1);
+			if(buttons.get(idx1).isEnabled())	
+			{
+				firstButtonFound = true;
+			}
+		}
+		
+		while(!secondButtonFound){
+			idx2 = r.nextInt(buttons.size()-1);
+			if(buttons.get(idx2).getIcon() == buttons.get(idx2).defaultIcon && idx1 != idx2){
+				secondButtonFound = true;
+			}
+		}
+		
+		buttons.get(idx1).Select();
+		buttons.get(idx2).Select();
 	}
 	
 }

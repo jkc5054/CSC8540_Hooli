@@ -33,6 +33,9 @@ public abstract class AbstractPlayer {
 	
 	public abstract void AddSeenImage(ImageButton inImage);
 	public abstract void SelectImages();
+	public abstract boolean CanSelectImages();
+	public abstract boolean SelectsRandomImages();
+	
 
 	
 }
