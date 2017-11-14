@@ -8,11 +8,18 @@ import java.awt.Font;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.awt.Dimension;
 
@@ -29,6 +36,10 @@ public class BoardView extends JPanel {
 	
 	JLabel lblPlayerScore;
 	JLabel lblPlayerScore_1;
+	
+	JTextArea currentPlayerText;
+	
+	private boolean CurrentlySelecting = false;
 
 	private ArrayList<ImageButton> buttons = new ArrayList<ImageButton>();
 	/**
@@ -320,6 +331,17 @@ public class BoardView extends JPanel {
 		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnBack.setBounds(347, 597, 193, 92);
 		add(btnBack);
+		
+		JLabel currentPlayerLabel = new JLabel("Current Player:");
+		currentPlayerLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
+		currentPlayerLabel.setBounds(800, 133, 261, 30);
+		add(currentPlayerLabel);
+		
+		currentPlayerText = new JTextArea();
+		currentPlayerText.setFont(new Font("Tahoma", Font.BOLD, 30));
+		currentPlayerText.setEditable(false);
+		currentPlayerText.setBounds(1050, 123, 220, 40);
+		add(currentPlayerText);
 
 	}
 	
@@ -337,28 +359,67 @@ public class BoardView extends JPanel {
 	}
 	
 	public void SelectRandomImages(){
-		Random r = new Random();
-		boolean firstButtonFound = false;
-		boolean secondButtonFound = false;
-		
-		int idx1 = 0, idx2 = 0;
-		while(!firstButtonFound){
-			idx1 = r.nextInt(buttons.size()-1);
-			if(buttons.get(idx1).isEnabled())	
-			{
-				firstButtonFound = true;
+		if(!CurrentlySelecting)
+		{
+			CurrentlySelecting = true;
+			Random r = new Random();
+			String log = "Beginning SelectRandomImages\n";
+			boolean firstButtonFound = false;
+			boolean secondButtonFound = false;
+			
+			int idx1 = 0, idx2 = 0;
+			while(!firstButtonFound){
+				
+				idx1 = r.nextInt(buttons.size()-1);
+				log += "idx1 attempt = " + idx1 + "\n";
+				
+				if(buttons.get(idx2).getIcon() == buttons.get(idx2).defaultIcon)
+				{
+					firstButtonFound = true;
+					log += "idx1 accepted. Value = " + buttons.get(idx1).indexInKey + "\n\n";
+				}
 			}
-		}
-		
-		while(!secondButtonFound){
-			idx2 = r.nextInt(buttons.size()-1);
-			if(buttons.get(idx2).getIcon() == buttons.get(idx2).defaultIcon && idx1 != idx2){
-				secondButtonFound = true;
+			
+			while(!secondButtonFound){
+				idx2 = r.nextInt(buttons.size()-1);
+				log += "idx2 attempt = " + idx2 + "\n";
+				if(buttons.get(idx2).getIcon() == buttons.get(idx2).defaultIcon && idx1 != idx2){
+					secondButtonFound = true;
+					log += "idx2 accepted. Value = " + buttons.get(idx2).indexInKey + "\n\n";
+				}
 			}
+			
+			buttons.get(idx1).Select();
+			buttons.get(idx2).Select();
+	
+			Path p = Paths.get(HooliConstants.LOG_PATH + System.currentTimeMillis());
+			try {
+				Files.write(p, Arrays.asList(log), Charset.forName("UTF-8") );
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			CurrentlySelecting = false;
 		}
-		
-		buttons.get(idx1).Select();
-		buttons.get(idx2).Select();
 	}
 	
+	public int GetRemainingUnrevealedTiles() {
+		int numUnrevealedTiles = 0;
+		
+		for(ImageButton btn : buttons) {
+			if(btn.isEnabled())
+			{
+				numUnrevealedTiles++;
+			}
+		}
+		
+		return numUnrevealedTiles;
+	}
+	
+	public ArrayList<ImageButton> getButtonList(){
+		return this.buttons;
+	}
+	
+	public void setCurrentPlayer(AbstractPlayer player) {
+		currentPlayerText.setText(player.getName());
+	}
 }

@@ -79,7 +79,7 @@ public class HuskerDuModel {
 		ClickResult result = new ClickResult();
 		Player1.AddSeenImage(button);
 		Player2.AddSeenImage(button);
-		
+
 		if(previousClick == null) {
 			previousClick = button;
 			result.IsMatch = false;

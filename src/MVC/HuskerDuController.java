@@ -36,10 +36,13 @@ public class HuskerDuController {
 	public void SetPlayers(AbstractPlayer inPlayer1, AbstractPlayer inPlayer2){
 		Player1 = inPlayer1;
 		Player2 = inPlayer2;
+		Player1.SetImageList(view.getButtonList());
+		Player2.SetImageList(view.getButtonList());
 		model.SetPlayers(inPlayer1, inPlayer2);
 	}
 	
 	public void SelectImage(ImageButton inButton) {
+		/*
 		ClickResult result = model.SelectButton(inButton);
 		
 		if(result.IsSecondButton)
@@ -56,8 +59,18 @@ public class HuskerDuController {
 				ResetIconRunnable runnable = new ResetIconRunnable(result.btn1, result.btn2);
 				(new Thread(runnable)).start();
 			}
-			model.SwitchPlayer();
 			
+			//SwitchPlayerRunnable runnable = new SwitchPlayerRunnable(model);
+			 //model.SwitchPlayer();
+			model.SwitchPlayer();
+			/*Thread t = new Thread(runnable);
+			t.start();
+			try {
+				t.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}*/
+			/*
 			if(model.CurrentPlayer.CanSelectImages())
 			{
 				model.CurrentPlayer.SelectImages();
@@ -68,7 +81,48 @@ public class HuskerDuController {
 				view.SelectRandomImages();
 			}
 		}
+	*/
+		Player1.AddSeenImage(inButton);
+		Player2.AddSeenImage(inButton);
+		model.CurrentPlayer.ChooseImage(inButton);
 	}
+	
+	public void StartGame() {
+		Thread resetIconThread = null;
+		
+		while(view.GetRemainingUnrevealedTiles() > 0) {
+			if(resetIconThread != null) {
+				if(resetIconThread.isAlive()) {
+					try {
+						resetIconThread.join();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			
+			view.setCurrentPlayer(model.CurrentPlayer);
+			model.CurrentPlayer.SelectImages();
+			
+			if(model.CurrentPlayer.selectedImage1.indexInKey == model.CurrentPlayer.selectedImage2.indexInKey) {
+				model.CurrentPlayer.selectedImage1.setEnabled(false);
+				model.CurrentPlayer.selectedImage2.setEnabled(false);
+				model.IncrementScoreForCurrentPlayer();
+				view.UpdateScores();
+			}
+			else {
+				ResetIconRunnable runnable = new ResetIconRunnable(model.CurrentPlayer.selectedImage1, model.CurrentPlayer.selectedImage2);
+				resetIconThread = new Thread(runnable);
+				resetIconThread.start();
+			}
+				
+			
+			model.SwitchPlayer();
+			
+		}
+	}
+	
+	
 
 	
 	

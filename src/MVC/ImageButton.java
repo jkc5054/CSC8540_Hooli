@@ -40,11 +40,25 @@ public class ImageButton extends JButton {
 	}
 	
 	public void Select() {
-		if(icon != null && getIcon() == defaultIcon) {
-			setIcon(icon);
-			synchronized(this){
-				main.SelectImage(this);
+		if(icon != null && isEnabled()) 
+		{
+			if(getIcon() == defaultIcon) 
+			{
+				/*
+				SelectIconRunnable runnable = new SelectIconRunnable(this);
+				(new Thread(runnable)).start();
+			}
+			else
+			{
+				PerformButtonAction();
+				*/
+				PerformButtonAction();
 			}
 		}
+	}
+	
+	public void PerformButtonAction() {
+		setIcon(icon);
+		main.SelectImage(this);
 	}
 }

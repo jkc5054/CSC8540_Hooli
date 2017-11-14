@@ -7,6 +7,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.SwingWorker;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -36,7 +37,14 @@ public class GameModeView extends JPanel {
 				AbstractPlayer player1 = new HumanPlayer("Player 1");
 				AbstractPlayer player2 = new ComputerPlayer("Computer");
 				main.SetPlayers(player1, player2);
-				main.SinglePlayer();
+				SwingWorker worker = new SwingWorker<Void, Void>(){
+					@Override
+					public Void doInBackground() {
+						main.SinglePlayer();
+						return null;
+					}
+				};
+				worker.execute();
 			}
 		});
 		btnSinglePlayer.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -49,7 +57,14 @@ public class GameModeView extends JPanel {
 				AbstractPlayer player1 = new HumanPlayer("Player 1");
 				AbstractPlayer player2 = new ComputerPlayer("Player 2");
 				main.SetPlayers(player1, player2);
-				main.SinglePlayer();
+				SwingWorker worker = new SwingWorker<Void, Void>(){
+					@Override
+					public Void doInBackground() {
+						main.SinglePlayer();
+						return null;
+					}
+				};
+				worker.execute();
 			}
 		});
 		btnTwoPlayers.setFont(new Font("Tahoma", Font.PLAIN, 25));

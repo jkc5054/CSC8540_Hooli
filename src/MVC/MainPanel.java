@@ -1,6 +1,7 @@
 package MVC;
 
 import java.awt.CardLayout;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -30,6 +31,7 @@ public class MainPanel extends JPanel {
 	
 	public void SinglePlayer() {
 		cardLayout.show(this,  BoardView.Key);
+		controller.StartGame();
 	}
 	
 	public void showCard(String key) {
@@ -56,5 +58,18 @@ public class MainPanel extends JPanel {
 	public void SelectRandomImages(){
 		boardView.SelectRandomImages();
 	}
+	
+	public ArrayList<ImageButton> getButtonList(){
+		return boardView.getButtonList();
+	}
+	
+	public int GetRemainingUnrevealedTiles() {
+		return boardView.GetRemainingUnrevealedTiles();
+	}
+	
+	public void setCurrentPlayer(AbstractPlayer player) {
+		boardView.setCurrentPlayer(player);
+	}
+	
 	
 }
