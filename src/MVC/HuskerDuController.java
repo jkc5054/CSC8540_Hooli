@@ -91,36 +91,72 @@ public class HuskerDuController {
 		Thread resetIconThread = null;
 		
 		while(view.GetRemainingUnrevealedTiles() > 0) {
-			if(resetIconThread != null) {
-				if(resetIconThread.isAlive()) {
-					try {
-						resetIconThread.join();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			}
+//			if(resetIconThread != null) {
+//				if(resetIconThread.isAlive()) {
+//					try {
+//						resetIconThread.join();
+//					} catch (InterruptedException e) {
+//						e.printStackTrace();
+//					}
+//				}
+//			}
 			
 			view.setCurrentPlayer(model.CurrentPlayer);
 			model.CurrentPlayer.SelectImages();
 			
 			if(model.CurrentPlayer.selectedImage1.indexInKey == model.CurrentPlayer.selectedImage2.indexInKey) {
+//				try {
+//					if(resetIconThread != null) {
+//						resetIconThread.join();
+//					}
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
+				Player1.RemoveImages(model.CurrentPlayer.selectedImage1, model.CurrentPlayer.selectedImage2);
+				Player2.RemoveImages(model.CurrentPlayer.selectedImage1, model.CurrentPlayer.selectedImage2);
 				model.CurrentPlayer.selectedImage1.setEnabled(false);
 				model.CurrentPlayer.selectedImage2.setEnabled(false);
 				model.IncrementScoreForCurrentPlayer();
 				view.UpdateScores();
+				//WaitRunnable runnable = new WaitRunnable();
+				//resetIconThread = new Thread(runnable);
+				//resetIconThread.start();
 			}
 			else {
+//				try {
+//					if(resetIconThread != null) {
+//						resetIconThread.join();
+//					}
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
 				ResetIconRunnable runnable = new ResetIconRunnable(model.CurrentPlayer.selectedImage1, model.CurrentPlayer.selectedImage2);
 				resetIconThread = new Thread(runnable);
 				resetIconThread.start();
 			}
-				
+			
+			try {
+				resetIconThread.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			
 			model.SwitchPlayer();
 			
 		}
 	}
+	
+	public class WaitRunnable implements Runnable {
+		@Override
+		public void run() {
+			try {
+				Thread.sleep(1500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	
 	
 

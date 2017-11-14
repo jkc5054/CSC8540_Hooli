@@ -42,6 +42,7 @@ public abstract class AbstractPlayer {
 	public abstract boolean SelectsRandomImages();
 	public abstract void SetImageList(ArrayList<ImageButton> inList);
 	public abstract void ChooseImage(ImageButton btn);
+	public abstract void RemoveImages(ImageButton btn1, ImageButton btn2);
 	
 	
 	

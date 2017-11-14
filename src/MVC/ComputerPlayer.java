@@ -33,6 +33,13 @@ public class ComputerPlayer extends AbstractPlayer {
 		masterButtonList = inList;
 	}
 	
+	public void RemoveImages(ImageButton btn1, ImageButton btn2) {
+		masterButtonList.remove(btn1);
+		masterButtonList.remove(btn2);
+		seenButtonList.remove(btn1);
+		seenButtonList.remove(btn2);
+	}
+	
 	public void ChooseImage(ImageButton btn) {
 		
 	}
@@ -48,37 +55,20 @@ public class ComputerPlayer extends AbstractPlayer {
 					this.selectedImage2 = imageMap.get(btn.indexInKey);
 					selectedImage1.Select();
 					selectedImage2.Select();
+					break;
 			 	}
 				else{
 					imageMap.put(btn.indexInKey, btn);
 				}
 			}
+			
+			seenButtonList.remove(selectedImage1);
+			seenButtonList.remove(selectedImage2);
 		}
 		else
 		{
 			SelectRandomImages();
 		}
-		
-//		synchronized(buttonList) {
-//			for(ImageButton btn : buttonList) {
-//				localList.add(btn);
-//			}
-//		}
-		
-		
-//		synchronized(buttonList){
-//			for(ImageButton btn : localList){
-//				synchronized(btn){
-//					if(imageMap.containsKey(btn.indexInKey)){
-//						btn.Select();
-//						imageMap.get(btn.indexInKey).Select();
-//				 	}
-//					else{
-//						imageMap.put(btn.indexInKey, btn);
-//					}
-//				}
-//			}
-//		}
 	}
 	
 	public boolean CanSelectImages(){
@@ -86,6 +76,7 @@ public class ComputerPlayer extends AbstractPlayer {
 		
 		for(ImageButton btn : seenButtonList){
 			if(knownIndexes.contains(btn.indexInKey)){
+				
 				return true;
 		 	}
 			else{
@@ -108,7 +99,7 @@ public class ComputerPlayer extends AbstractPlayer {
 			idx1 = r.nextInt(masterButtonList.size()-1);
 			log += "idx1 attempt = " + idx1 + "\n";
 			
-			if(masterButtonList.get(idx2).getIcon() == masterButtonList.get(idx2).defaultIcon)
+			if(masterButtonList.get(idx1).getIcon() == masterButtonList.get(idx1).defaultIcon)
 			{
 				firstButtonFound = true;
 				log += "idx1 accepted. Value = " + masterButtonList.get(idx1).indexInKey + "\n\n";

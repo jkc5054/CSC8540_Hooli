@@ -28,6 +28,10 @@ public class HumanPlayer extends AbstractPlayer {
 		}
 	}
 	
+	public void RemoveImages(ImageButton btn1, ImageButton btn2) {
+		
+	}
+	
 	public void SelectImages() {
 		while(img1 == null || img2 == null)
 		{
