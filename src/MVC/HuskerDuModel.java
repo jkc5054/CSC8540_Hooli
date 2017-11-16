@@ -101,6 +101,13 @@ public class HuskerDuModel {
 		return result;
 	}
 	
+	//pri
+	public String getWinner(){
+		if(Player1.getScore() > Player2.getScore())
+			return "Player 1";
+		else 
+			return "Player 2";
+	}
 	
 	
 	

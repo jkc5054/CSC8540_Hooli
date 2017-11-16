@@ -12,6 +12,7 @@ import java.util.Collections;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class HuskerDuController {
 	
@@ -31,6 +32,8 @@ public class HuskerDuController {
 		arrayOfContainers = model.arrayOfContainers;
 		view = new HuskerDuView(this);
 		view.LoadImages(arrayOfContainers, model.defaultIcon);
+		//test pri
+		//System.out.println("Remaining : " + view.GetRemainingUnrevealedTiles());
 	}
 	
 	public void SetPlayers(AbstractPlayer inPlayer1, AbstractPlayer inPlayer2){
@@ -89,8 +92,9 @@ public class HuskerDuController {
 	
 	public void StartGame() {
 		Thread resetIconThread = null;
-		
-		while(view.GetRemainingUnrevealedTiles() > 0) {
+		//changing it to do while as last match score is not getting updated-pri
+		//while(view.GetRemainingUnrevealedTiles() > 0) {
+	    do {
 //			if(resetIconThread != null) {
 //				if(resetIconThread.isAlive()) {
 //					try {
@@ -144,6 +148,11 @@ public class HuskerDuController {
 			model.SwitchPlayer();
 			
 		}
+		while (view.GetRemainingUnrevealedTiles() > 0);
+		//test pri
+		//System.out.println("Game over. The winner is " );//p
+		//model.getWinner();//p
+		JOptionPane.showMessageDialog(null, "The winner is " +model.getWinner());
 	}
 	
 	public class WaitRunnable implements Runnable {
