@@ -7,6 +7,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.SwingWorker;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -16,7 +17,7 @@ public class GameModeView extends JPanel {
 
 	public static String Key = "GAMEMODE";
 	
-	public String level = ""; //pri
+	public String level = ""; 
 	
 	/**
 	 * Create the panel.
@@ -36,7 +37,14 @@ public class GameModeView extends JPanel {
 				AbstractPlayer player1 = new HumanPlayer("Player 1");
 				AbstractPlayer player2 = new ComputerPlayer("Computer");
 				main.SetPlayers(player1, player2);
-				main.SinglePlayer();
+				SwingWorker worker = new SwingWorker<Void, Void>(){
+					@Override
+					public Void doInBackground() {
+						main.SinglePlayer();
+						return null;
+					}
+				};
+				worker.execute();
 			}
 		});
 		btnSinglePlayer.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -46,14 +54,24 @@ public class GameModeView extends JPanel {
 		JButton btnTwoPlayers = new JButton("Two Players");
 		btnTwoPlayers.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				main.SinglePlayer();
+				AbstractPlayer player1 = new HumanPlayer("Player 1");
+				AbstractPlayer player2 = new ComputerPlayer("Player 2");
+				main.SetPlayers(player1, player2);
+				SwingWorker worker = new SwingWorker<Void, Void>(){
+					@Override
+					public Void doInBackground() {
+						main.SinglePlayer();
+						return null;
+					}
+				};
+				worker.execute();
 			}
 		});
 		btnTwoPlayers.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		btnTwoPlayers.setBounds(747, 150, 193, 92);
 		add(btnTwoPlayers);
 		
-		//pri
+		
 		
 		//Choose game level
 		
@@ -68,7 +86,7 @@ public class GameModeView extends JPanel {
 				btnLevelEasy.setBounds(430, 450, 193, 92);
 				btnLevelEasy.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						level = "Easy";//pri
+						level = "Easy";
 						System.out.println("set level");
 						
 					}
@@ -80,7 +98,7 @@ public class GameModeView extends JPanel {
 				btnLevelHard.setBounds(750, 450, 193, 92);
 				btnLevelHard.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						level = "Hard"; //pri
+						level = "Hard"; 
 					}
 				});
 				

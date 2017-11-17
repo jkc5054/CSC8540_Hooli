@@ -77,6 +77,9 @@ public class HuskerDuModel {
 	
 	public ClickResult SelectButton(ImageButton button) {
 		ClickResult result = new ClickResult();
+		Player1.AddSeenImage(button);
+		Player2.AddSeenImage(button);
+
 		if(previousClick == null) {
 			previousClick = button;
 			result.IsMatch = false;
@@ -88,7 +91,6 @@ public class HuskerDuModel {
 			result.btn2 = button;
 			if(previousClick.indexInKey == button.indexInKey){
 				result.IsMatch = true;
-				
 			}
 			else
 			{
@@ -99,6 +101,13 @@ public class HuskerDuModel {
 		return result;
 	}
 	
+	//pri
+	public String getWinner(){
+		if(Player1.getScore() > Player2.getScore())
+			return "Player 1";
+		else 
+			return "Player 2";
+	}
 	
 	
 	

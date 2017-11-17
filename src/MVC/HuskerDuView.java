@@ -1,6 +1,7 @@
 package MVC;
 
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -36,6 +37,22 @@ public class HuskerDuView {
 	
 	public void UpdateScores() {
 		mainPanel.UpdateScores();
+	}
+	
+	public void SelectRandomImages(){
+		mainPanel.SelectRandomImages();
+	}
+	
+	public int GetRemainingUnrevealedTiles() {
+		return mainPanel.GetRemainingUnrevealedTiles();
+	}
+	
+	public ArrayList<ImageButton> getButtonList(){
+		return mainPanel.getButtonList();
+	}
+	
+	public void setCurrentPlayer(AbstractPlayer player) {
+		mainPanel.setCurrentPlayer(player);
 	}
 
 	/**
