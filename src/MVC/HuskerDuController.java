@@ -50,9 +50,12 @@ public class HuskerDuController {
 		model.CurrentPlayer.ChooseImage(inButton);
 	}
 	
+	public void SetNumTiles(int tiles) {
+		model.numberOfTiles = tiles;
+	}
+	
 	public void StartGame() {
 		Thread resetIconThread = null;
-
 	    do {
 
 			view.setCurrentPlayer(model.CurrentPlayer);
@@ -65,18 +68,8 @@ public class HuskerDuController {
 				model.CurrentPlayer.selectedImage2.setEnabled(false);
 				model.IncrementScoreForCurrentPlayer();
 				view.UpdateScores();
-				//WaitRunnable runnable = new WaitRunnable();
-				//resetIconThread = new Thread(runnable);
-				//resetIconThread.start();
 			}
 			else {
-//				try {
-//					if(resetIconThread != null) {
-//						resetIconThread.join();
-//					}
-//				} catch (InterruptedException e) {
-//					e.printStackTrace();
-//				}
 				ResetIconRunnable runnable = new ResetIconRunnable(model.CurrentPlayer.selectedImage1, model.CurrentPlayer.selectedImage2);
 				resetIconThread = new Thread(runnable);
 				resetIconThread.start();
@@ -88,9 +81,6 @@ public class HuskerDuController {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
-		
-			
 		}
 		while (view.GetRemainingUnrevealedTiles() > 0);
 		//test pri
