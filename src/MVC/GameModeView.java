@@ -17,7 +17,9 @@ public class GameModeView extends JPanel {
 
 	public static String Key = "GAMEMODE";
 	
-	public static int level; 
+
+	public String level = "Easy"; 
+
 	
 	/**
 	 * Create the panel.
@@ -86,9 +88,11 @@ public class GameModeView extends JPanel {
 				btnLevelEasy.setBounds(430, 450, 193, 92);
 				btnLevelEasy.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						level= 1;
-										
-					}
+					level = "Easy";
+						main.setDifficulty(level);
+						System.out.println("set level");
+						
+			}
 				});	
 				
 				
@@ -97,7 +101,10 @@ public class GameModeView extends JPanel {
 				btnLevelHard.setBounds(750, 450, 193, 92);
 				btnLevelHard.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						level = 2; 
+
+						level = "Hard"; 
+						main.setDifficulty(level);
+
 					}
 				});
 				
