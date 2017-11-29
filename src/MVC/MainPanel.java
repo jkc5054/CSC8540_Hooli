@@ -71,5 +71,13 @@ public class MainPanel extends JPanel {
 		boardView.setCurrentPlayer(player);
 	}
 	
+	public void setDifficulty(String inDifficulty) {
+		if(inDifficulty.equals("Easy")) {
+			controller.SetNumTiles(19);
+		}
+		else if(inDifficulty.equals("Hard")) {
+			controller.SetNumTiles(23);
+		}
+	}
 	
 }
