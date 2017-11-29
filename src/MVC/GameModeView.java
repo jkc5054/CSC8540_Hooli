@@ -17,13 +17,15 @@ public class GameModeView extends JPanel {
 
 	public static String Key = "GAMEMODE";
 	
-	public String level = ""; 
+	public static int level; 
 	
 	/**
 	 * Create the panel.
 	 */
 	public GameModeView(MainPanel main) {
 		setLayout(null);
+		
+		
 		
 		JLabel lblChooseGameMode = new JLabel("Choose your game mode!");
 		lblChooseGameMode.setHorizontalAlignment(SwingConstants.CENTER);
@@ -55,7 +57,7 @@ public class GameModeView extends JPanel {
 		btnTwoPlayers.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AbstractPlayer player1 = new HumanPlayer("Player 1");
-				AbstractPlayer player2 = new ComputerPlayer("Player 2");
+				AbstractPlayer player2 = new HumanPlayer("Player 2");
 				main.SetPlayers(player1, player2);
 				SwingWorker worker = new SwingWorker<Void, Void>(){
 					@Override
@@ -71,8 +73,6 @@ public class GameModeView extends JPanel {
 		btnTwoPlayers.setBounds(747, 150, 193, 92);
 		add(btnTwoPlayers);
 		
-		
-		
 		//Choose game level
 		
 				JLabel lblChooseGameLevel = new JLabel("Choose your game level!");
@@ -86,9 +86,8 @@ public class GameModeView extends JPanel {
 				btnLevelEasy.setBounds(430, 450, 193, 92);
 				btnLevelEasy.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						level = "Easy";
-						System.out.println("set level");
-						
+						level= 1;
+										
 					}
 				});	
 				
@@ -98,13 +97,13 @@ public class GameModeView extends JPanel {
 				btnLevelHard.setBounds(750, 450, 193, 92);
 				btnLevelHard.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						level = "Hard"; 
+						level = 2; 
 					}
 				});
 				
 			add(btnLevelEasy);
-			add(btnLevelHard);		
-		
+			add(btnLevelHard);	
+			
 		
 		JButton btnBack = new JButton("Back");
 		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -118,6 +117,14 @@ public class GameModeView extends JPanel {
 		add(btnBack);
 		
 
+	}
+
+	public static int getLevel() {
+		return level;
+	}
+
+	public static void setLevel(int level) {
+		GameModeView.level = level;
 	}
 
 }

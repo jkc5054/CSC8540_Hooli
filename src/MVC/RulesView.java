@@ -69,7 +69,8 @@ public class RulesView extends JFrame implements Jpanel {
 		
 		
 		contentPane.add(txtRules);
-		setSize(900,600);
+		//setSize(900,600);
+		setSize(1400,1000);
 		setVisible(true);
 		
 	}

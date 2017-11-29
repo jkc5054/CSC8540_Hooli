@@ -96,6 +96,7 @@ public class HuskerDuModel {
 			{
 				result.IsMatch = false;
 			}			
+
 			previousClick = null;
 		}
 		return result;
@@ -106,7 +107,7 @@ public class HuskerDuModel {
 		if(Player1.getScore() > Player2.getScore())
 			return "Player 1";
 		else 
-			return "Player 2";
+			return "Player 2/Computer";
 	}
 	
 	

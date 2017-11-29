@@ -137,6 +137,7 @@ public class HuskerDuController {
 				ResetIconRunnable runnable = new ResetIconRunnable(model.CurrentPlayer.selectedImage1, model.CurrentPlayer.selectedImage2);
 				resetIconThread = new Thread(runnable);
 				resetIconThread.start();
+				model.SwitchPlayer();
 			}
 			
 			try {
@@ -145,7 +146,7 @@ public class HuskerDuController {
 				e.printStackTrace();
 			}
 			
-			model.SwitchPlayer();
+			//model.SwitchPlayer();
 			
 		}
 		while (view.GetRemainingUnrevealedTiles() > 0);
