@@ -47,7 +47,10 @@ public class ComputerPlayer extends AbstractPlayer {
 	public void SelectImages() {
 		HashMap<Integer, ImageButton> imageMap = new HashMap<Integer, ImageButton>();
 		
-		if(CanSelectImages())
+		Random r = new Random();
+		int chance = r.nextInt(99) + 1;
+		
+		if(CanSelectImages() && (chance > this.ChanceToPickPair))
 		{
 			for(ImageButton btn : seenButtonList){
 				if(imageMap.containsKey(btn.indexInKey)){
