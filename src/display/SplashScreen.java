@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
 
 public class SplashScreen extends JFrame {
 
@@ -50,14 +51,26 @@ public class SplashScreen extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnStartGame = new JButton("Start Game");
-		btnStartGame.setBounds(987, 394, 97, 25);
+		btnStartGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StartGameDialog startDialog = new StartGameDialog();
+				startDialog.setVisible(true);
+				//contentPane.setVisible(false);
+			}
+		});
+		btnStartGame.setBounds(958, 394, 126, 25);
 		contentPane.add(btnStartGame);
 		
 		JButton btnGameRules = new JButton("Game Rules");
+		btnGameRules.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnGameRules.setBounds(1096, 394, 119, 25);
 		contentPane.add(btnGameRules);
 		
 		JLabel lblSplashScreen = new JLabel("");
+		//lblSplashScreen.setIcon(new ImageIcon("C:\\github-repos\\CSC8540_Hooli\\cfg\\SplashScreen.jpg"));
 		lblSplashScreen.setIcon(new ImageIcon("C:\\github-repos\\CSC8540_Hooli\\cfg\\SplashScreen.jpg"));
 		lblSplashScreen.setBounds(0, 0, 1228, 381);
 		contentPane.add(lblSplashScreen);
