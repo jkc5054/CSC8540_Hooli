@@ -51,6 +51,10 @@ public class HuskerDuView {
 		return mainPanel.getButtonList();
 	}
 	
+	public void SetPlayersInView(AbstractPlayer player1, AbstractPlayer player2) {
+		mainPanel.SetPlayersInView(player1, player2);
+	}
+	
 	public void setCurrentPlayer(AbstractPlayer player) {
 		mainPanel.setCurrentPlayer(player);
 	}

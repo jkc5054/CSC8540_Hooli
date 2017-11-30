@@ -28,10 +28,10 @@ public class HuskerDuController {
 	}
 	
 	public void LoadImages() {
-		model.LoadImages();
+		//model.LoadImages();
 		arrayOfContainers = model.arrayOfContainers;
 		view = new HuskerDuView(this);
-		view.LoadImages(arrayOfContainers, model.defaultIcon);
+		//view.LoadImages(arrayOfContainers, model.defaultIcon);
 		//test pri
 		//System.out.println("Remaining : " + view.GetRemainingUnrevealedTiles());
 	}
@@ -39,9 +39,6 @@ public class HuskerDuController {
 	public void SetPlayers(AbstractPlayer inPlayer1, AbstractPlayer inPlayer2){
 		Player1 = inPlayer1;
 		Player2 = inPlayer2;
-		Player1.SetImageList(view.getButtonList());
-		Player2.SetImageList(view.getButtonList());
-		model.SetPlayers(inPlayer1, inPlayer2);
 	}
 	
 	public void SelectImage(ImageButton inButton) {
@@ -51,11 +48,21 @@ public class HuskerDuController {
 	}
 	
 	public void SetNumTiles(int tiles) {
-		model.numberOfTiles = tiles;
+		model.numberOfUniqueImages = tiles;
+	}
+	
+	public void SetupGame() {
+		model.LoadImages();
+		view.LoadImages(model.arrayOfContainers, model.defaultIcon);
+		view.SetPlayersInView(Player1, Player2);
+		Player1.SetImageList(view.getButtonList());
+		Player2.SetImageList(view.getButtonList());
+		model.SetPlayers(Player1, Player2);
 	}
 	
 	public void StartGame() {
 		Thread resetIconThread = null;
+	
 	    do {
 
 			view.setCurrentPlayer(model.CurrentPlayer);

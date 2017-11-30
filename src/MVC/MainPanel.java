@@ -30,6 +30,7 @@ public class MainPanel extends JPanel {
 	}
 	
 	public void SinglePlayer() {
+		controller.SetupGame();
 		cardLayout.show(this,  BoardView.Key);
 		controller.StartGame();
 	}
@@ -48,6 +49,9 @@ public class MainPanel extends JPanel {
 	
 	public void SetPlayers(AbstractPlayer player1, AbstractPlayer player2) {
 		controller.SetPlayers(player1, player2);
+	}
+	
+	public void SetPlayersInView(AbstractPlayer player1, AbstractPlayer player2) {
 		boardView.SetPlayers(player1, player2);
 	}
 	
