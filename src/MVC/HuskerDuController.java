@@ -51,6 +51,7 @@ public class HuskerDuController {
 	}
 	
 	public void SetNumTiles(int tiles) {
+		System.out.println("no of tiles " + tiles);
 		model.numberOfTiles = tiles;
 	}
 	
@@ -84,9 +85,6 @@ public class HuskerDuController {
 
 		}
 		while (view.GetRemainingUnrevealedTiles() > 0);
-		//test pri
-		//System.out.println("Game over. The winner is " );//p
-		//model.getWinner();//p
 		JOptionPane.showMessageDialog(null, "The winner is " +model.getWinner());
 	}
 	
