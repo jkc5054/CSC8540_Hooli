@@ -31,6 +31,7 @@ public class HuskerDuView {
 	}
 	
 	public void LoadImages(ImageIconContainer[] images, ImageIcon defaultIcon) {
+		System.out.println("images are " + images.length); //test
 		mainPanel.LoadImages(images, defaultIcon);
 		
 	}

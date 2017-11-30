@@ -31,6 +31,7 @@ public class HuskerDuModel {
 		File folder = new File(HooliConstants.CFG_PATH + "GameImages");
 		ArrayList<File> listOfFiles = new ArrayList<File>(Arrays.asList(folder.listFiles()));
 		ArrayList<ImageIconContainer> listOfContainers = new ArrayList<ImageIconContainer>();
+		System.out.println("unique" + numberOfUniqueImages);
 		for(int i = 0; i < numberOfUniqueImages; i++) {
 			Image img;
 			try {
@@ -104,12 +105,13 @@ public class HuskerDuModel {
 		return result;
 	}
 	
-	//pri
+	
 	public String getWinner(){
 		if(Player1.getScore() > Player2.getScore())
 			return "Player 1";
 		else 
-			return "Player 2/Computer";
+			return   Player2.getName();
+					//"Player 2/Computer";
 	}
 	
 	

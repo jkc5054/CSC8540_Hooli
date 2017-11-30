@@ -70,7 +70,8 @@ public class BoardView extends JPanel {
 		level.setBounds(1050, 50, 124, 40);
 		level.setEditable(false);
 		level.setFont(new Font("Tahoma", Font.BOLD,30));
-		//level.setText(gameMode.level);  
+		if(iconsToUse.length==38){level.setText("Easy");}
+		else level.setText("Hard");
 		add(level);
 		
 		lblPlayerScore = new JLabel();
@@ -275,7 +276,7 @@ public class BoardView extends JPanel {
 		buttons.add(imageButton_36);
 		
 		/*adding more images*/
-		
+		if(iconsToUse.length==46){
 		ImageButton imageButton_39 = new ImageButton(defaultIcon, main);
 		imageButton_39.setBounds(130, 11, 80, 80);
 		add(imageButton_39);
@@ -316,7 +317,7 @@ public class BoardView extends JPanel {
 		add(imageButton_46);
 		buttons.add(imageButton_46);
 		
-		
+		}
 		for(int i = 0; i < buttons.size(); i++) {
 			buttons.get(i).setIconProperty(iconsToUse[i].icon);
 			buttons.get(i).indexInKey = iconsToUse[i].key;

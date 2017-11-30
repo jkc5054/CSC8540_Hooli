@@ -32,7 +32,7 @@ public class HuskerDuController {
 		arrayOfContainers = model.arrayOfContainers;
 		view = new HuskerDuView(this);
 		//view.LoadImages(arrayOfContainers, model.defaultIcon);
-		//test pri
+		//test 
 		//System.out.println("Remaining : " + view.GetRemainingUnrevealedTiles());
 	}
 	
