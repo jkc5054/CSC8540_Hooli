@@ -19,7 +19,7 @@ public class HuskerDuModel {
 	
 	private ImageButton previousClick = null;
 	
-	public int numberOfTiles = 0;
+	public int numberOfUniqueImages = 23;
 	
 
 	AbstractPlayer Player1;
@@ -31,19 +31,7 @@ public class HuskerDuModel {
 		File folder = new File(HooliConstants.CFG_PATH + "GameImages");
 		ArrayList<File> listOfFiles = new ArrayList<File>(Arrays.asList(folder.listFiles()));
 		ArrayList<ImageIconContainer> listOfContainers = new ArrayList<ImageIconContainer>();
-		
-		
-		
-		/*
-			if(listOfFiles.size() > numberOfTiles) {
-			int maximumFiles = listOfFiles.size();
-			for(int i = numberOfTiles; i < maximumFiles; i++) {
-				listOfFiles.remove(i);
-			}
-		}*/
-		
-		
-		for(int i = 0; i < listOfFiles.size(); i++) {
+		for(int i = 0; i < numberOfUniqueImages; i++) {
 			Image img;
 			try {
 				img = ImageIO.read(listOfFiles.get(i));
@@ -123,7 +111,6 @@ public class HuskerDuModel {
 		else 
 			return "Player 2/Computer";
 	}
-	
 	
 	
 	
