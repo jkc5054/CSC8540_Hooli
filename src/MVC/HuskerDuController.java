@@ -1,17 +1,6 @@
 package MVC;
 
 import java.awt.EventQueue;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class HuskerDuController {
@@ -28,12 +17,8 @@ public class HuskerDuController {
 	}
 	
 	public void LoadImages() {
-		//model.LoadImages();
 		arrayOfContainers = model.arrayOfContainers;
 		view = new HuskerDuView(this);
-		//view.LoadImages(arrayOfContainers, model.defaultIcon);
-		//test 
-		//System.out.println("Remaining : " + view.GetRemainingUnrevealedTiles());
 	}
 	
 	public void SetPlayers(AbstractPlayer inPlayer1, AbstractPlayer inPlayer2){
@@ -108,10 +93,6 @@ public class HuskerDuController {
 	}
 
 	
-	
-
-	
-	
 	/**
 	 * Launch the application.
 	 */
@@ -121,9 +102,7 @@ public class HuskerDuController {
 				try {
 					HuskerDuController controller = new HuskerDuController();
 					controller.LoadImages();
-					//HuskerDuView window = new HuskerDuView();
-					//window.frame.setVisible(true);
-				} catch (Exception e) {
+					} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}

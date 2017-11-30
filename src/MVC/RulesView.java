@@ -1,8 +1,5 @@
 package MVC;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 
@@ -69,7 +66,6 @@ public class RulesView extends JFrame implements Jpanel {
 		
 		
 		contentPane.add(txtRules);
-		//setSize(900,600);
 		setSize(1400,1000);
 		setVisible(true);
 		

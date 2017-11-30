@@ -1,15 +1,10 @@
 package MVC;
 
-import java.awt.EventQueue;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.awt.Dialog;
-import java.awt.Dimension;
 
 public class HuskerDuView {
 
@@ -31,7 +26,6 @@ public class HuskerDuView {
 	}
 	
 	public void LoadImages(ImageIconContainer[] images, ImageIcon defaultIcon) {
-		System.out.println("images are " + images.length); //test
 		mainPanel.LoadImages(images, defaultIcon);
 		
 	}

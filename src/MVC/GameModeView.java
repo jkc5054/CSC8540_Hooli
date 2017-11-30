@@ -3,12 +3,9 @@ package MVC;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.SwingWorker;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

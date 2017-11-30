@@ -21,8 +21,7 @@ public class MainPanel extends JPanel {
 	}
 	
 	public void LoadImages(ImageIconContainer[] inIcons, ImageIcon defaultIcon){
-		System.out.println("incoming number " + inIcons.length);
-	
+		
 		boardView = new BoardView(this, inIcons, defaultIcon);
 		add(boardView, BoardView.Key);	
 		

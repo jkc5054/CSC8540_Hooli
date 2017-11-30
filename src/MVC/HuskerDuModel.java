@@ -111,7 +111,7 @@ public class HuskerDuModel {
 			return "Player 1";
 		else 
 			return   Player2.getName();
-					//"Player 2/Computer";
+				
 	}
 	
 	

@@ -5,10 +5,8 @@ import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
-import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -50,20 +48,20 @@ public class BoardView extends JPanel {
 		setLayout(null);
 
 		textArea = new JTextArea();
-		textArea.setBounds(10, 582, 174, 100);
+		textArea.setBounds(1059, 226, 174, 100);
 		textArea.setFont(new Font("Tahoma", Font.BOLD,60));
-		textArea.setText("0");
+		textArea.setText("    0");
 		add(textArea);
 		
 		textArea_1 = new JTextArea();
-		textArea_1.setBounds(687, 582, 174, 100);
+		textArea_1.setBounds(1059, 380, 174, 100);
 		textArea_1.setFont(new Font("Tahoma", Font.BOLD,60));
-		textArea_1.setText("0");
+		textArea_1.setText("    0");
 		add(textArea_1);
 		
-		JLabel gameLevel = new JLabel("Level : ");
+		JLabel gameLevel = new JLabel("Level");
 		gameLevel.setFont(new Font("Tahoma", Font.BOLD, 30));
-		gameLevel.setBounds(937, 50, 124, 30);
+		gameLevel.setBounds(937, 50, 124, 40);
 		add(gameLevel);
 		
 		JTextArea level = new JTextArea();
@@ -75,14 +73,15 @@ public class BoardView extends JPanel {
 		add(level);
 		
 		lblPlayerScore = new JLabel();
+		lblPlayerScore.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPlayerScore.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblPlayerScore.setBounds(10, 547, 298, 24);
+		lblPlayerScore.setBounds(850, 260, 200, 40);
 		add(lblPlayerScore);
 		
 		lblPlayerScore_1 = new JLabel();
 		lblPlayerScore_1.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblPlayerScore_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblPlayerScore_1.setBounds(572, 552, 289, 24);
+		lblPlayerScore_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPlayerScore_1.setBounds(850, 410, 200, 40);
 		add(lblPlayerScore_1);
 		
 		ImageButton imageButton = new ImageButton(defaultIcon, main);
@@ -334,7 +333,7 @@ public class BoardView extends JPanel {
 		btnBack.setBounds(347, 597, 193, 92);
 		add(btnBack);
 		
-		JLabel currentPlayerLabel = new JLabel("Current Player:");
+		JLabel currentPlayerLabel = new JLabel("Current Player");
 		currentPlayerLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
 		currentPlayerLabel.setBounds(800, 133, 261, 30);
 		add(currentPlayerLabel);
