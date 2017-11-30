@@ -55,7 +55,7 @@ public class GameModeView extends JPanel {
 		btnTwoPlayers.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AbstractPlayer player1 = new HumanPlayer("Player 1");
-				AbstractPlayer player2 = new ComputerPlayer("Player 2");
+				AbstractPlayer player2 = new HumanPlayer("Player 2");
 				main.SetPlayers(player1, player2);
 				SwingWorker worker = new SwingWorker<Void, Void>(){
 					@Override
