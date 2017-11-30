@@ -52,8 +52,8 @@ public class ComputerPlayer extends AbstractPlayer {
 		
 		if(CanSelectImages() && (chance > this.ChanceToPickPair))
 		{
-			Random r = new Random(100);
-			if(r.nextInt() <= ChanceToPickPair - 1)
+			Random r1 = new Random(100);
+			if(r1.nextInt() <= ChanceToPickPair - 1)
 			{
 				for(ImageButton btn : seenButtonList){
 					if(imageMap.containsKey(btn.indexInKey)){

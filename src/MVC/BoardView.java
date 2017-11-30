@@ -28,10 +28,7 @@ public class BoardView extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	public static String Key = "BOARDVIEW";
-	
-	private static int Easy = 1;
-	private static int Hard = 2;
-	private int difficulty = Easy;
+
 	AbstractPlayer player1, player2;
 	
 	JTextArea textArea;
@@ -51,9 +48,7 @@ public class BoardView extends JPanel {
 	public BoardView(MainPanel main, ImageIconContainer[] iconsToUse, ImageIcon defaultIcon) {
 		setSize(new Dimension(12000, 900));
 		setLayout(null);
-		
-		//level = GameModeView.getLevel();//pri
-		
+
 		textArea = new JTextArea();
 		textArea.setBounds(10, 582, 174, 100);
 		textArea.setFont(new Font("Tahoma", Font.BOLD,60));
@@ -75,6 +70,7 @@ public class BoardView extends JPanel {
 		level.setBounds(1050, 50, 124, 40);
 		level.setEditable(false);
 		level.setFont(new Font("Tahoma", Font.BOLD,30));
+		//level.setText(gameMode.level);  
 		add(level);
 		
 		lblPlayerScore = new JLabel();
@@ -279,7 +275,7 @@ public class BoardView extends JPanel {
 		buttons.add(imageButton_36);
 		
 		/*adding more images*/
-		if(difficulty == Hard){
+		
 		ImageButton imageButton_39 = new ImageButton(defaultIcon, main);
 		imageButton_39.setBounds(130, 11, 80, 80);
 		add(imageButton_39);
@@ -319,10 +315,9 @@ public class BoardView extends JPanel {
 		imageButton_46.setBounds(670, 458, 80, 80);
 		add(imageButton_46);
 		buttons.add(imageButton_46);
-		}	
-				
+		
+		
 		for(int i = 0; i < buttons.size(); i++) {
-		//for(int i = 0; i < Hard; i++) {
 			buttons.get(i).setIconProperty(iconsToUse[i].icon);
 			buttons.get(i).indexInKey = iconsToUse[i].key;
 		}

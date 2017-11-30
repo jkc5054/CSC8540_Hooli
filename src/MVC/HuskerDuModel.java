@@ -32,14 +32,16 @@ public class HuskerDuModel {
 		ArrayList<File> listOfFiles = new ArrayList<File>(Arrays.asList(folder.listFiles()));
 		ArrayList<ImageIconContainer> listOfContainers = new ArrayList<ImageIconContainer>();
 		
+		
+		
 		/*
-		if(listOfFiles.size() > numberOfTiles) {
+			if(listOfFiles.size() > numberOfTiles) {
 			int maximumFiles = listOfFiles.size();
 			for(int i = numberOfTiles; i < maximumFiles; i++) {
 				listOfFiles.remove(i);
 			}
-		}
-		*/
+		}*/
+		
 		
 		for(int i = 0; i < listOfFiles.size(); i++) {
 			Image img;
@@ -56,6 +58,7 @@ public class HuskerDuModel {
 				e.printStackTrace();
 			}
 		}
+		
 		Collections.shuffle(listOfContainers);
 		arrayOfContainers = listOfContainers.toArray(new ImageIconContainer[listOfContainers.size()]);		
 		

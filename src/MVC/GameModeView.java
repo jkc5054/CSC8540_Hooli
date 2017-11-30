@@ -90,7 +90,7 @@ public class GameModeView extends JPanel {
 					public void actionPerformed(ActionEvent e) {
 					level = "Easy";
 						main.setDifficulty(level);
-						System.out.println("set level");
+						
 						
 			}
 				});	
@@ -104,6 +104,7 @@ public class GameModeView extends JPanel {
 
 						level = "Hard"; 
 						main.setDifficulty(level);
+						
 
 					}
 				});
@@ -126,12 +127,6 @@ public class GameModeView extends JPanel {
 
 	}
 
-	public static int getLevel() {
-		return level;
-	}
-
-	public static void setLevel(int level) {
-		GameModeView.level = level;
-	}
+	
 
 }
